@@ -8,6 +8,8 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --spacing: 8px;
+
   --font-heading: "Montserrat", "Lato", Georgia, serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
   --font-code: "JetBrains Mono", Consolas, monospace;
