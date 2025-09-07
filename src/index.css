@@ -18,13 +18,44 @@
   --font-serif: "Montserrat", "Lato", Georgia, serif;
   --font-mono: "JetBrains Mono", Consolas, monospace;
 
-  --color-primary: #dcdcdc;
-  --color-secondary: #666666;
-  --color-accent: #56edce;
+  --color-primary: #30b0ff;
+  --color-secondary: #0021b3;
+  --color-accent: #5cd7d7;
 
   --color-text-primary: #000000;
-  --color-text-secondary: #0c19a2;
+  --color-text-secondary: #0021b3;
   --color-text-muted: #4e4e4e;
+
+  --color-background: #ffffff;
+  --color-background-secondary: #f8f9fa;
+  --color-background-elevated: #ffffff;
+  --color-background-muted: #e9ecef;
+
+  --color-border: #4e5b61;
+  --color-border-light: #8d9ba1;
+  --color-border-focus: #30b0ff;
+  --color-border-hover: #003952;
+
+  --color-hover: #f8f9fa;
+  --color-active: #e9ecef;
+  --color-disabled: #6c757d;
+  --color-focus-ring: rgba(92, 215, 215, 0.3);
+
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-error: #dc3545;
+  --color-info: #17a2b8;
+
+  --color-skill-cloud: #b0ceff;
+  --color-tech-card: #c9c9c9;
+  --color-project-card: #ffffff;
+  --color-nav-active: #5cd7d7;
+  --color-hero-gradient-start: #30b0ff;
+  --color-hero-gradient-end: #0021b3;
+
+  --color-accent-dark: #34afaf;
+  --color-accent-light: #84ffff;
+  --color-highlight: #fff3cd;
 }
 
 @layer theme {
@@ -38,11 +69,42 @@
 
       --color-text-primary: #ffffff;
       --color-text-secondary: #e9dcff;
-      --color-text-muted: #4e4e4e;
+      --color-text-muted: #b0b0b0;
+
+      --color-background: #0d1117;
+      --color-background-secondary: #161b22;
+      --color-background-elevated: #21262d;
+      --color-background-muted: #1c2128;
+
+      --color-border: #30363d;
+      --color-border-light: #21262d;
+      --color-border-focus: #50005d;
+      --color-border-hover: #484f58;
+
+      --color-hover: #161b22;
+      --color-active: #21262d;
+      --color-disabled: #484f58;
+      --color-focus-ring: rgba(80, 0, 93, 0.4);
+
+      --color-success: #238636;
+      --color-warning: #d29922;
+      --color-error: #da3633;
+      --color-info: #1f6feb;
+
+      --color-skill-cloud: #161b22;
+      --color-tech-card: #21262d;
+      --color-project-card: #21262d;
+      --color-nav-active: #50005d;
+      --color-hero-gradient-start: #50005d;
+      --color-hero-gradient-end: #e9dcff;
+
+      --color-accent-light: #7c3aed;
+      --color-accent-dark: #3b0764;
+      --color-highlight: #2d1b69;
     }
   }
 }
 
 body {
-  @apply font-body;
+  @apply font-body bg-[var(--color-background)] text-[var(--color-text-primary)];
 }
