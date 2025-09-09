@@ -10,7 +10,7 @@ export interface TypographyProps extends HTMLAttributes<HTMLElement> {
     color?: TypographyColor;
 }
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
+export type ButtonVariant = 'primary' | 'secondary' | 'outlined' | 'ghost';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {

@@ -10,14 +10,20 @@ export const typographyVariantStyles = {
 };
 
 export const buttonVariantStyles = {
-    primary: "",
-    secondary: "",
-    outlined: "",
-    ghost: ""
+    primary: 'bg-primary text-white border-2 border-primary hover:bg-primary/90 hover:border-primary/90 focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-primary/80',
+    secondary: 'bg-secondary text-white border-2 border-secondary hover:bg-secondary/90 hover:border-secondary/90 focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-secondary/80',
+    outlined: 'bg-transparent text-text-primary border-2 border-border hover:bg-hover hover:border-border-hover focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-active',
+    ghost: 'bg-transparent text-text-primary border-2 border-transparent hover:bg-hover hover:border-border-light focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-active'
+};
+
+export const buttonSizeStyles = {
+    sm: 'px-3 py-1.5 text-sm font-medium',
+    md: 'px-4 py-2 text-base font-medium',
+    lg: 'px-6 py-3 text-lg font-medium'
 };
 
 export const cardVariantStyles = {
-    default: "",
-    elevated: "",
-    outlined: ""
-}
+    default: 'bg-background border border-border',
+    elevated: 'bg-background-elevated shadow-lg',
+    outlined: 'bg-background border-2 border-border'
+};

@@ -106,5 +106,5 @@
 }
 
 body {
-  @apply font-body bg-[var(--color-background)] text-[var(--color-text-primary)];
+  @apply font-body bg-background text-text-primary;
 }
