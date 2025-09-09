@@ -6,7 +6,7 @@ export const typographyVariantStyles = {
     p: 'text-base md:text-lg font-normal font-body leading-relaxed',
     subtitle: 'text-lg md:text-xl font-medium font-body leading-relaxed',
     caption: 'text-sm font-normal font-body leading-normal',
-    code: 'text-sm font-mono bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded'
+    code: 'text-sm font-mono bg-background-elevated px-2 py-1 rounded'
 };
 
 export const buttonVariantStyles = {

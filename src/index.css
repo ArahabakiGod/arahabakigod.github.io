@@ -28,7 +28,7 @@
 
   --color-background: #ffffff;
   --color-background-secondary: #f8f9fa;
-  --color-background-elevated: #ffffff;
+  --color-background-elevated: #444444;
   --color-background-muted: #e9ecef;
 
   --color-border: #4e5b61;
@@ -73,7 +73,7 @@
 
       --color-background: #0d1117;
       --color-background-secondary: #161b22;
-      --color-background-elevated: #21262d;
+      --color-background-elevated: #444444;
       --color-background-muted: #1c2128;
 
       --color-border: #30363d;
