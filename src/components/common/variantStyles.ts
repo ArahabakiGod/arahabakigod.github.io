@@ -27,3 +27,17 @@ export const cardVariantStyles = {
     elevated: 'bg-background-elevated shadow-lg',
     outlined: 'bg-background border-2 border-border'
 };
+
+export const inputVariantStyles = {
+    normal: 'w-full px-4 py-2 font-body text-base border-2 border-border bg-background text-text-primary rounded-lg transition-all duration-200 placeholder:text-text-muted focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-focus-ring',
+    error: 'w-full px-4 py-2 font-body text-base border-2 border-error bg-background text-text-primary rounded-lg transition-all duration-200 placeholder:text-text-muted focus:outline-none focus:border-error focus:ring-2 focus:ring-error/30',
+    disabled: 'w-full px-4 py-2 font-body text-base border-2 border-border bg-background-muted text-disabled rounded-lg transition-all duration-200 placeholder:text-text-muted focus:outline-none cursor-not-allowed opacity-60'
+};
+
+export const labelVariantStyles = {
+    normal: 'block text-sm font-medium font-body mb-2 text-text-secondary',
+    error: 'block text-sm font-medium font-body mb-2 text-error',
+    disabled: 'block text-sm font-medium font-body mb-2 text-disabled'
+};
+
+export const errorMessageStyles = 'mt-1 text-sm font-body text-error';
