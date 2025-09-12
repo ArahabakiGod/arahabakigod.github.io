@@ -22,12 +22,6 @@ export const buttonSizeStyles = {
     lg: 'px-6 py-3 text-lg font-medium'
 };
 
-export const cardVariantStyles = {
-    default: 'bg-background border border-border',
-    elevated: 'bg-background-elevated shadow-lg',
-    outlined: 'bg-background border-2 border-border'
-};
-
 export const inputVariantStyles = {
     normal: 'w-full px-4 py-2 font-body text-base border-2 border-border bg-background text-text-primary rounded-lg transition-all duration-200 placeholder:text-text-muted focus:outline-none focus:border-border-focus focus:ring-2 focus:ring-focus-ring',
     error: 'w-full px-4 py-2 font-body text-base border-2 border-error bg-background text-text-primary rounded-lg transition-all duration-200 placeholder:text-text-muted focus:outline-none focus:border-error focus:ring-2 focus:ring-error/30',
@@ -41,3 +35,59 @@ export const labelVariantStyles = {
 };
 
 export const errorMessageStyles = 'mt-1 text-sm font-body text-error';
+
+export const cardVariantStyles = {
+    default: 'bg-background border border-border rounded-lg shadow-sm',
+    elevated: 'bg-background-elevated border border-border rounded-lg shadow-lg',
+    outlined: 'bg-background border-2 border-border rounded-lg shadow-none',
+    tech: 'bg-tech-card border border-border rounded-xl shadow-md overflow-hidden',
+    project: 'bg-project-card border border-border rounded-2xl shadow-lg overflow-hidden',
+    social: 'bg-background border border-border rounded-lg shadow-sm hover:shadow-md',
+    'skill-cloud': 'bg-skill-cloud border border-border-light rounded-full shadow-sm'
+};
+
+export const cardSizeStyles = {
+    sm: 'p-3 max-w-sm',
+    md: 'p-4 max-w-md',
+    lg: 'p-6 max-w-lg',
+    xl: 'p-8 max-w-xl',
+    auto: 'p-4 w-full'
+};
+
+export const cardInteractiveStyles = {
+    base: 'transition-all duration-300 ease-in-out cursor-pointer',
+    hover: 'hover:shadow-lg hover:scale-105 hover:bg-hover',
+    active: 'active:scale-95 active:bg-active',
+    focus: 'focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2'
+};
+
+export const cardResponsiveStyles = 'w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl';
+
+export const switchSizeStyles = {
+    sm: {
+        container: 'w-8 h-4 p-[2px]',
+        toggle: 'w-3 h-3',
+        translate: 'translate-x-4'
+    },
+    md: {
+        container: 'w-10 h-5 p-[2px]',
+        toggle: 'w-4 h-4',
+        translate: 'translate-x-5'
+    },
+    lg: {
+        container: 'w-12 h-6 p-[2px]',
+        toggle: 'w-5 h-5',
+        translate: 'translate-x-6'
+    }
+};
+
+export const switchVariantStyles = {
+    base: 'relative inline-flex items-center rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-focus-ring focus:ring-offset-2 cursor-pointer border-2 border-border-light',
+    enabled: 'bg-primary',
+    disabled: 'bg-border',
+    toggle: {
+        base: 'inline-block rounded-full bg-white shadow-sm transform transition-transform duration-200 ease-in-out',
+        enabled: '',
+        disabled: ''
+    }
+};

@@ -23,12 +23,6 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     type?: 'button' | 'submit' | 'reset';
 }
 
-export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-    children: React.ReactNode;
-    className?: string;
-    variant?: 'default' | 'elevated' | 'outlined';
-}
-
 export interface InputProps extends HTMLAttributes<HTMLInputElement> {
     label?: string;
     error?: string;
@@ -37,4 +31,36 @@ export interface InputProps extends HTMLAttributes<HTMLInputElement> {
     required?: boolean;
     disabled?: boolean;
     className?: string;
+}
+
+export type CardVariant = 'default' | 'elevated' | 'outlined' | 'tech' | 'project' | 'social' | 'skill-cloud';
+export type CardSize = 'sm' | 'md' | 'lg' | 'xl' | 'auto';
+
+export interface CardProps {
+    children: React.ReactNode;
+    className?: string;
+    variant?: CardVariant;
+    size?: CardSize;
+    interactive?: boolean;
+    href?: string;
+    clickable?: boolean;
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+    [key: string]: any;
+}
+
+export type SwitchSize = 'sm' | 'md' | 'lg';
+
+export interface SwitchProps {
+    checked: boolean;
+    onChange: (checked: boolean) => void;
+    size?: SwitchSize;
+    disabled?: boolean;
+    className?: string;
+    colorLeft?: string;
+    colorRight?: string;
+    labelLeft?: string;
+    labelRight?: string;
+    iconLeft?: React.ReactNode;
+    iconRight?: React.ReactNode;
+    textInside?: boolean;
 }
