@@ -10,7 +10,7 @@ import ruCommon from './ru/common.json';
 import ruNavigation from './ru/navigation.json';
 import ruPortfolio from './ru/portfolio.json';
 
-const resources = {
+export const resources = {
     en: {
         common: enCommon,
         navigation: enNavigation,
@@ -21,7 +21,7 @@ const resources = {
         navigation: ruNavigation,
         portfolio: ruPortfolio,
     },
-};
+} as const;
 
 i18n
     .use(initReactI18next)

@@ -1,3 +1,21 @@
 {
-    
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "send": "Send",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "email": "Email",
+    "phone": "Phone",
+    "name": "Name",
+    "message": "Message",
+    "required": "Required field",
+    "optional": "Optional",
+    "attachFile": "Attach file",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "downloadCV": "Download CV"
 }

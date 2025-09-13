@@ -1,3 +1,48 @@
 {
-    
+    "hero": {
+        "title": "Full Stack Developer",
+        "subtitle": "Creating modern web applications",
+        "description": "I'm passionate about building beautiful, functional, and user-centered digital experiences."
+    },
+    "stack": {
+        "title": "My Technology Stack",
+        "frontend": "Frontend Developer",
+        "backend": "Backend Developer",
+        "description": "Technologies I work with"
+    },
+    "softSkills": {
+        "title": "Soft Skills",
+        "subtitle": "Personal and professional qualities"
+    },
+    "projects": {
+        "title": "My Projects",
+        "subtitle": "Some of my recent work",
+        "viewProject": "View Project",
+        "sourceCode": "Source Code",
+        "liveDemo": "Live Demo"
+    },
+    "contact": {
+        "title": "Let's Work Together",
+        "subtitle": "Get in touch to discuss your next project",
+        "form": {
+            "name": "Your Name",
+            "email": "Your Email",
+            "subject": "Subject",
+            "message": "Your Message",
+            "attachFile": "Attach File",
+            "send": "Send Message"
+        },
+        "social": {
+            "title": "Find Me Online",
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "telegram": "Telegram",
+            "email": "Email"
+        }
+    },
+    "footer": {
+        "links": "Useful Links",
+        "contact": "Contact Information",
+        "techStack": "Built with"
+    }
 }
