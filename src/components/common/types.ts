@@ -21,6 +21,7 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     disabled?: boolean;
     loading?: boolean;
     type?: 'button' | 'submit' | 'reset';
+    icon?: React.ReactNode;
 }
 
 export interface InputProps extends HTMLAttributes<HTMLInputElement> {

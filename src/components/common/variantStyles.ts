@@ -13,7 +13,7 @@ export const buttonVariantStyles = {
     primary: 'bg-primary text-white border-2 border-primary hover:bg-primary/90 hover:border-primary/90 focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-primary/80',
     secondary: 'bg-secondary text-white border-2 border-secondary hover:bg-secondary/90 hover:border-secondary/90 focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-secondary/80',
     outlined: 'bg-transparent text-text-primary border-2 border-border hover:bg-hover hover:border-border-hover focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-active',
-    ghost: 'bg-transparent text-text-primary border-2 border-transparent hover:bg-hover hover:border-border-light focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-active'
+    ghost: 'bg-transparent text-text-primary border-2 border-transparent hover:bg-hover hover:border-border-light focus:outline-none active:bg-active'
 };
 
 export const buttonSizeStyles = {
@@ -67,17 +67,20 @@ export const switchSizeStyles = {
     sm: {
         container: 'w-8 h-4 p-[2px]',
         toggle: 'w-3 h-3',
-        translate: 'translate-x-4'
+        translate: 'translate-x-4',
+        icon: 'w-2 h-2 m-0.5'
     },
     md: {
         container: 'w-10 h-5 p-[2px]',
         toggle: 'w-4 h-4',
-        translate: 'translate-x-5'
+        translate: 'translate-x-5',
+        icon: 'w-2.5 h-2.5 m-[6px]'
     },
     lg: {
         container: 'w-12 h-6 p-[2px]',
         toggle: 'w-5 h-5',
-        translate: 'translate-x-6'
+        translate: 'translate-x-6',
+        icon: 'w-3 h-3 m-1'
     }
 };
 

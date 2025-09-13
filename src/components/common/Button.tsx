@@ -10,6 +10,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   loading = false,
   type = "button",
+  icon,
   onClick,
   ...props
 }) => {
@@ -38,6 +39,19 @@ const Button: React.FC<ButtonProps> = ({
     }
     onClick?.(event);
   };
+  
+  const getIconSize = () => {
+    switch (size) {
+      case "sm":
+        return "w-3 h-3";
+      case "md":
+        return "w-4 h-4";
+      case "lg":
+        return "w-5 h-5";
+      default:
+        return "w-4 h-4";
+    }
+  };
 
   return (
     <button
@@ -47,9 +61,9 @@ const Button: React.FC<ButtonProps> = ({
       onClick={handleClick}
       {...props}
     >
-      {loading && (
+      {loading ? (
         <svg
-          className="animate-spin -ml-1 mr-2 h-4 w-4"
+          className={`animate-spin -ml-1 mr-2 ${getIconSize()}`}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -68,6 +82,10 @@ const Button: React.FC<ButtonProps> = ({
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           />
         </svg>
+      ) : (
+        icon && (
+          <span className={`${getIconSize()} mr-2 flex-shrink-0`}>{icon}</span>
+        )
       )}
       {children}
     </button>

@@ -107,4 +107,34 @@
 
 body {
   @apply font-body bg-background text-text-primary;
+  /* Убираем overflow-hidden чтобы интерактивный фон работал правильно */
+  min-height: 100vh;
+}
+
+/* Улучшаем производительность для анимированного фона */
+#root {
+  position: relative;
+}
+
+/* Дополнительные стили для контента поверх фона */
+.content-overlay {
+  position: relative;
+  z-index: 10;
+  /* Легкая прозрачность для фона контента */
+  background: rgba(background, 0.95);
+  backdrop-filter: blur(1px);
+}
+
+/* Стили для карточек поверх фона */
+.card-overlay {
+  background: rgba(background, 0.9);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(border, 0.3);
+}
+
+/* Прозрачная навигация */
+.nav-overlay {
+  background: rgba(background, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(border, 0.2);
 }
