@@ -1,6 +1,8 @@
 function NavMenu() {
   return (
-    <div>NavMenu</div>
+    <div className="flex flex-row">
+      {}
+    </div>
   )
 }
 
