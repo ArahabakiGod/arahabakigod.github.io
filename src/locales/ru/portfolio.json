@@ -37,12 +37,14 @@
             "github": "GitHub",
             "linkedin": "LinkedIn",
             "telegram": "Telegram",
-            "email": "Email"
+            "email": "Email",
+            "phone": "Телефон"
         }
     },
     "footer": {
         "links": "Полезные ссылки",
         "contact": "Контактная информация",
-        "techStack": "Сделано с помощью"
+        "techStack": "Сделано с помощью",
+        "copyright": "© 2025 Устинов Степан. Все права защищены."
     }
 }

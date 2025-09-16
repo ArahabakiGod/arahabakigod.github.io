@@ -37,12 +37,14 @@
             "github": "GitHub",
             "linkedin": "LinkedIn",
             "telegram": "Telegram",
-            "email": "Email"
+            "email": "Email",
+            "phone": "Phone"
         }
     },
     "footer": {
         "links": "Useful Links",
         "contact": "Contact Information",
-        "techStack": "Built with"
+        "techStack": "Built with",
+        "copyright": "© 2025 Ustinov Stepan. All rights reserved."
     }
 }

@@ -1,15 +1,29 @@
-import Contacts from "./Contacts";
+import React from "react";
+import { Typography } from "../common";
 import Links from "./Links";
+import Contacts from "./Contacts";
 import TechStack from "./TechStack";
+import { useTranslation } from "react-i18next";
 
-function Footer() {
+const Footer: React.FC = () => {
+  const { t } = useTranslation("portfolio");
+
   return (
-    <div className="flex h-full py-2 px-6 flex-row left-0 bg-background-secondary opacity-90 w-full justify-between items-center px-2 h-12 border-b-2 border-border-light inset-shadow-sm inset-shadow-accent/40">
-      <Links />
-      <Contacts />
-      <TechStack />
-    </div>
+    <footer className="bg-background-secondary opacity-90 border-t border-accent py-4 px-4 inset-shadow-sm inset-shadow-accent/80">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-0 md:justify-between">
+          <Links />
+          <Contacts />
+          <TechStack />
+        </div>
+        <div className="mt-8 pt-4 border-t border-border text-center">
+          <Typography variant="caption" color="muted">
+            {t("footer.copyright")}
+          </Typography>
+        </div>
+      </div>
+    </footer>
   );
-}
+};
 
 export default Footer;
