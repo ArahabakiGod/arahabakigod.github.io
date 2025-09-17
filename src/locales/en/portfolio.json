@@ -45,6 +45,11 @@
         "links": "Useful Links",
         "contact": "Contact Information",
         "techStack": "Built with",
-        "copyright": "© 2025 Ustinov Stepan. All rights reserved."
+        "copyright": "© 2025 Ustinov Stepan. All rights reserved.",
+        "labels": {
+            "telegram": "Write me in Telegram",
+            "linkedin": "Connect me in LinkedIn",
+            "github": "View GitHub profile"
+        }
     }
 }
