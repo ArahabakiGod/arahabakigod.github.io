@@ -13,21 +13,33 @@ const Links: React.FC = () => {
       icon: <SiTelegram className="w-4 h-4" />,
       href: "https://t.me/spac1e",
       color: "text-text-primary hover:text-[#0088cc]",
+<<<<<<< HEAD
       ariaLabel: t("footer.labels.telegram"),
+=======
+      ariaLabel: "Написать в Telegram",
+>>>>>>> ba18ed770b6a7077078e92f853ff7c7228259813
     },
     {
       name: "GitHub",
       icon: <SiGithub className="w-4 h-4" />,
       href: "https://github.com/arahabakigod",
       color: "hover:text-text-primary",
+<<<<<<< HEAD
       ariaLabel: t("footer.labels.github"),
+=======
+      ariaLabel: "Посмотреть профиль на GitHub",
+>>>>>>> ba18ed770b6a7077078e92f853ff7c7228259813
     },
     {
       name: "LinkedIn",
       icon: <SiLinkedin className="w-4 h-4" />,
       href: "https://linkedin.com/in/arahabaki",
       color: "hover:text-[#0a66c2]",
+<<<<<<< HEAD
       ariaLabel: t("footer.labels.linkedin"),
+=======
+      ariaLabel: "Подключиться в LinkedIn",
+>>>>>>> ba18ed770b6a7077078e92f853ff7c7228259813
     },
   ];
 
