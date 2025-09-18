@@ -41,6 +41,11 @@
             "phone": "Phone"
         }
     },
+    "header": {
+        "logo": "Stepan Ustinov",
+        "logoShort": "SU",
+        "developer": "Full Stack Developer"
+    },
     "footer": {
         "links": "Useful Links",
         "contact": "Contact Information",

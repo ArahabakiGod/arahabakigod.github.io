@@ -1,12 +1,28 @@
-import { navItems } from "../../utils/navItems"
-import NavItem from "./NavItem"
+import React from "react";
+import { navItems } from "../../utils/navItems";
+import NavItem from "./NavItem";
+import MobileMenu from "./MobileMenu";
+import type { NavMenuProps } from "./types";
 
-function NavMenu() {
+const NavMenu: React.FC<NavMenuProps> = ({ className = "" }) => {
   return (
-    <div className="flex flex-row gap-2">
-      {navItems.map((item) => <NavItem key={item.scrollTarget} title={item.titleKey} scrollTarget={item.scrollTarget}/>)}
-    </div>
-  )
-}
+    <nav
+      className={`flex flex-row gap-2 items-center ${className}`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      {navItems.map((item) => (
+        <NavItem
+          key={item.scrollTarget}
+          title={item.titleKey}
+          scrollTarget={item.scrollTarget}
+          className="hidden lg:flex"
+        />
+      ))}
 
-export default NavMenu
+      <MobileMenu />
+    </nav>
+  );
+};
+
+export default NavMenu;
