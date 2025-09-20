@@ -30,17 +30,3 @@ export interface NavItem {
     scrollTarget: string;
     href?: string;
 }
-
-export interface HeaderSwitchProps {
-    className?: string;
-}
-
-export interface LanguageSwitchProps extends HeaderSwitchProps {
-    currentLanguage: string;
-    onLanguageChange: (isRu: boolean) => void;
-}
-
-export interface ThemeSwitchProps extends HeaderSwitchProps {
-    theme: 'light' | 'dark';
-    onThemeChange: () => void;
-}

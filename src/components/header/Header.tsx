@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { useLanguageStore } from "../../stores/languageStore";
 import { useThemeStore } from "../../stores/themeStore";
 import { Switch } from "../common";
