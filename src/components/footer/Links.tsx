@@ -1,35 +1,12 @@
 import React from "react";
 import { Button, Typography } from "../common";
-import { SiTelegram, SiGithub, SiLinkedin } from "react-icons/si";
-import type { SocialLink } from "./types";
 import { useTranslation } from "react-i18next";
+import { getSocialLinksWithLabels } from "../../constants";
 
 const Links: React.FC = () => {
   const { t } = useTranslation("portfolio");
 
-  const socialLinks: SocialLink[] = [
-    {
-      name: "Telegram",
-      icon: <SiTelegram className="w-4 h-4" />,
-      href: "https://t.me/spac1e",
-      color: "text-text-primary hover:text-[#0088cc]",
-      ariaLabel: t("footer.labels.telegram"),
-    },
-    {
-      name: "GitHub",
-      icon: <SiGithub className="w-4 h-4" />,
-      href: "https://github.com/arahabakigod",
-      color: "hover:text-text-primary",
-      ariaLabel: t("footer.labels.github"),
-    },
-    {
-      name: "LinkedIn",
-      icon: <SiLinkedin className="w-4 h-4" />,
-      href: "https://linkedin.com/in/arahabaki",
-      color: "hover:text-[#0a66c2]",
-      ariaLabel: t("footer.labels.linkedin"),
-    },
-  ];
+  const socialLinks = getSocialLinksWithLabels(t);
 
   const handleSocialClick = (href: string) => {
     window.open(href, '_blank', 'noopener,noreferrer');

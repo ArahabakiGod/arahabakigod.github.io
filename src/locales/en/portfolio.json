@@ -1,8 +1,201 @@
 {
     "hero": {
-        "title": "Full Stack Developer",
-        "subtitle": "Creating modern web applications",
-        "description": "I'm passionate about building beautiful, functional, and user-centered digital experiences."
+        "title": "Frontend Developer",
+        "subtitle": "Building Modern Web Applications",
+        "description": "Passionate about creating beautiful, functional, and user-centered digital experiences with React and TypeScript."
+    },
+    "personal": {
+        "experience": "{{years}}+ years of experience (since {{startYear}})",
+        "location": "Location: {{location}}",
+        "timezone": "Timezone: {{timezone}}",
+        "availability": {
+            "available": "Available for projects",
+            "busy": "Currently busy",
+            "not-available": "Not available"
+        }
+    },
+    "technologies": {
+        "react": "React",
+        "typescript": "TypeScript",
+        "javascript": "JavaScript",
+        "html": "HTML",
+        "css": "CSS",
+        "reactRouter": "React Router",
+        "reactQuery": "React Query",
+        "axios": "Axios",
+        "zustand": "Zustand",
+        "redux": "Redux",
+        "materialUi": "Material-UI",
+        "tailwind": "Tailwind CSS",
+        "formik": "Formik",
+        "yup": "Yup",
+        "i18next": "i18next",
+        "framerMotion": "Framer Motion",
+        "java": "Java",
+        "springBoot": "Spring Boot",
+        "springSecurity": "Spring Security",
+        "springData": "Spring Data",
+        "hibernate": "Hibernate",
+        "restApi": "REST API",
+        "jwt": "JWT",
+        "git": "Git",
+        "docker": "Docker",
+        "maven": "Maven",
+        "gradle": "Gradle",
+        "swagger": "Swagger",
+        "vite": "Vite",
+        "descriptions": {
+            "react": "Building interactive user interfaces",
+            "typescript": "Type-safe JavaScript development",
+            "javascript": "Core programming language for web",
+            "html": "Semantic markup language",
+            "css": "Styling and responsive design",
+            "reactRouter": "Client-side routing for React",
+            "reactQuery": "Server state management",
+            "axios": "HTTP client for API requests",
+            "zustand": "Lightweight state management",
+            "redux": "Predictable state container",
+            "materialUi": "React component library",
+            "tailwind": "Utility-first CSS framework",
+            "formik": "Build forms without tears",
+            "yup": "Schema validation library",
+            "i18next": "Internationalization framework",
+            "framerMotion": "Animation library for React",
+            "java": "Enterprise programming language",
+            "springBoot": "Java framework for microservices",
+            "springSecurity": "Security framework for Spring",
+            "springData": "Data access layer framework",
+            "hibernate": "Object-relational mapping",
+            "restApi": "RESTful web services",
+            "jwt": "JSON Web Token authentication",
+            "git": "Version control system",
+            "docker": "Containerization platform",
+            "maven": "Build automation tool",
+            "gradle": "Build automation system",
+            "swagger": "API documentation tool",
+            "vite": "Fast build tool for modern web"
+        }
+    },
+    "softSkills": {
+        "proactiveProblemSolver": {
+            "name": "Proactive Problem Solver",
+            "description": "Excel at visualizing UI/UX solutions while analyzing requirements, demonstrating strong analytical thinking that helps identify optimal frontend approaches before implementation begins."
+        },
+        "growthOrientedLearner": {
+            "name": "Growth-Oriented Learner",
+            "description": "Encouraged by challenging frontend projects and unsolved UI problems, finding genuine satisfaction in learning new React patterns, design systems, and modern web technologies."
+        },
+        "collaborativeTeamPlayer": {
+            "name": "Collaborative Team Player",
+            "description": "Work effectively with designers, backend developers, and management to establish productive workflows. Value knowledge sharing and believe diverse perspectives lead to better user experiences."
+        },
+        "qualityFocused": {
+            "name": "Quality-Focused",
+            "description": "Deliver production-ready, responsive code from the first iteration with attention to performance optimization, accessibility, and cross-browser compatibility."
+        },
+        "mentorshipMindset": {
+            "name": "Mentorship Mindset",
+            "description": "Enjoy helping teammates understand React concepts and frontend best practices, readily investing time in research when encountering new libraries or design patterns."
+        },
+        "creativeUiUxApproach": {
+            "name": "Creative UI/UX Approach",
+            "description": "Bring modern solutions to frontend challenges, focusing on user experience and modern design implementation."
+        },
+        "longTermCommitment": {
+            "name": "Long-term Commitment",
+            "description": "Interested in building lasting professional relationships and stable employment where I can contribute to sustained frontend excellence and team growth."
+        },
+        "resultsDriven": {
+            "name": "Results-Driven",
+            "description": "Highly motivated to demonstrate value through quality frontend delivery and committed to proving myself as a reliable team member in international development environments."
+        },
+        "analyticalThinking": {
+            "name": "Analytical Thinking",
+            "description": "Systematic approach to breaking down complex problems and making data-driven decisions in frontend development."
+        },
+        "crossBrowserCompatibility": {
+            "name": "Cross-Browser Compatibility",
+            "description": "Ensuring consistent user experience across different browsers and devices with thorough testing and optimization."
+        },
+        "responsiveDesignExpertise": {
+            "name": "Responsive Design Expertise",
+            "description": "Creating fluid, mobile-first designs that work seamlessly across all screen sizes and devices."
+        },
+        "internationalCommunication": {
+            "name": "International Communication",
+            "description": "Effective communication in international teams with English proficiency (B1-B2) and learning German for European markets."
+        }
+    },
+    "projects": {
+        "advertisingAggregator": {
+            "title": "Advertising Aggregator Platform",
+            "description": "Frontend development for monetization platform targeting content creators. Built responsive admin dashboard with interactive analytics charts, resource verification interface, and financial management system.",
+            "shortDescription": "React dashboard for content monetization with analytics and financial management",
+            "features": {
+                "analytics": "Interactive analytics dashboard with real-time statistics",
+                "verification": "Resource verification interface for multiple platforms",
+                "financial": "Financial management dashboard with revenue tracking",
+                "roleBasedUI": "Role-based UI with different views for users, admins, and partners",
+                "errorHandling": "Complete responsive frontend with global error handling"
+            },
+            "challenges": {
+                "realTimeStats": "Implementing real-time statistics updates",
+                "multiPlatform": "Creating verification interface for multiple platforms",
+                "performance": "Performance optimization for complex dashboard"
+            }
+        },
+        "graceBakery": {
+            "title": "Grace Bakery E-commerce Platform",
+            "description": "SPA application for bakery with complete order lifecycle. Built advanced product catalog with filtering, intelligent cart system, multilingual interface, and responsive admin panel.",
+            "shortDescription": "Complete e-commerce solution with multilingual support and advanced features",
+            "features": {
+                "productCatalog": "Advanced product catalog with filtering, search, and pagination",
+                "cartSystem": "Intelligent cart system supporting guest users with automatic cart merging",
+                "multilingual": "Multilingual interface (Russian/German) with real-time language switching",
+                "adminPanel": "Responsive admin panel for product and order management",
+                "formValidation": "Integrated form validation with comprehensive error handling",
+                "imageUpload": "Image upload with preview functionality"
+            },
+            "challenges": {
+                "cartMerging": "Implementing automatic cart merging for guest users",
+                "realTimeLanguage": "Real-time language switching without page reload",
+                "performance": "Performance optimization through virtualization and memoization"
+            }
+        },
+        "portfolioSpa": {
+            "title": "Portfolio SPA",
+            "description": "Modern, responsive personal portfolio website showcasing projects and skills. Features dark/light theme switching, internationalization, interactive animations, and performance optimization.",
+            "shortDescription": "Personal portfolio demonstrating latest React patterns and best practices",
+            "features": {
+                "responsive": "Responsive design for all devices",
+                "themeSwitch": "Dark/Light theme switching",
+                "multilingual": "Multi-language support (EN/RU)",
+                "animations": "Interactive background animations",
+                "contactForm": "Contact form with file attachments",
+                "performance": "Performance-optimized with lazy loading and code splitting"
+            },
+            "challenges": {
+                "canvasAnimations": "Creating performant canvas animations",
+                "themeImplementation": "Implementing theme switching with CSS variables",
+                "mobilePerformance": "Optimizing for mobile performance"
+            }
+        },
+        "wishbagMobile": {
+            "title": "WishBag Mobile App",
+            "description": "React Native application for couples to manage shared wishlists. Cross-platform mobile application with modern UI/UX patterns and real-time synchronization.",
+            "shortDescription": "Cross-platform mobile app for shared wishlist management",
+            "features": {
+                "crossPlatform": "Cross-platform mobile application for iOS and Android",
+                "sharedWishlist": "Shared wishlist management for couples",
+                "modernUI": "Modern mobile UI/UX patterns implementation",
+                "realTimeSync": "Real-time synchronization between devices"
+            },
+            "challenges": {
+                "crossPlatform": "Ensuring consistent experience across platforms",
+                "realTimeSync": "Implementing real-time data synchronization",
+                "mobileUX": "Creating intuitive mobile user experience"
+            }
+        }
     },
     "stack": {
         "title": "My Technology Stack",
@@ -10,11 +203,11 @@
         "backend": "Backend Developer",
         "description": "Technologies I work with"
     },
-    "softSkills": {
+    "softSkillsSection": {
         "title": "Soft Skills",
         "subtitle": "Personal and professional qualities"
     },
-    "projects": {
+    "projectsSection": {
         "title": "My Projects",
         "subtitle": "Some of my recent work",
         "viewProject": "View Project",
@@ -24,6 +217,12 @@
     "contact": {
         "title": "Let's Work Together",
         "subtitle": "Get in touch to discuss your next project",
+        "phone": {
+            "label": "Phone"
+        },
+        "email": {
+            "label": "Email"
+        },
         "form": {
             "name": "Your Name",
             "email": "Your Email",
@@ -34,17 +233,15 @@
         },
         "social": {
             "title": "Find Me Online",
-            "github": "GitHub",
-            "linkedin": "LinkedIn",
-            "telegram": "Telegram",
-            "email": "Email",
-            "phone": "Phone"
+            "github": "GitHub Profile",
+            "linkedin": "LinkedIn Profile",
+            "telegram": "Telegram Chat"
         }
     },
     "header": {
         "logo": "Stepan Ustinov",
         "logoShort": "SU",
-        "developer": "Full Stack Developer"
+        "developer": "Frontend Developer"
     },
     "footer": {
         "links": "Useful Links",
@@ -53,8 +250,8 @@
         "copyright": "© 2025 Ustinov Stepan. All rights reserved.",
         "labels": {
             "telegram": "Write me in Telegram",
-            "linkedin": "Connect me in LinkedIn",
-            "github": "View GitHub profile"
+            "linkedin": "Connect with me on LinkedIn",
+            "github": "View my GitHub profile"
         }
     }
 }

@@ -53,20 +53,18 @@ const Switch: React.FC<SwitchProps> = ({
     }
   };
 
-  // Рендер иконки с правильными размерами и центрированием
   const renderIcon = (icon: React.ReactNode) => {
     if (!icon) return null;
 
     return (
       <span
-        className={`${sizeConfig.icon} flex items-center justify-center text-gray-600`}
+        className={`${sizeConfig.icon} flex items-center justify-center text-text-muted`}
       >
         {icon}
       </span>
     );
   };
 
-  // Если textInside = true, показываем текст/эмодзи внутри переключателя
   if (textInside) {
     return (
       <button
@@ -78,7 +76,6 @@ const Switch: React.FC<SwitchProps> = ({
         aria-checked={checked}
         role="switch"
       >
-        {/* Текст внутри переключателя */}
         <div className="absolute inset-0 flex items-center justify-between px-2 sm:px-1 text-xs font-medium text-white">
           <span
             className={`transition-opacity duration-200 ${
@@ -96,7 +93,6 @@ const Switch: React.FC<SwitchProps> = ({
           </span>
         </div>
 
-        {/* Бегунок с иконкой */}
         <span className={toggleClassName}>
           {getCurrentIcon() && renderIcon(getCurrentIcon())}
         </span>
@@ -104,10 +100,8 @@ const Switch: React.FC<SwitchProps> = ({
     );
   }
 
-  // Обычный режим с подписями слева и справа от переключателя
   return (
     <div className="flex items-center gap-3">
-      {/* Левая подпись */}
       {labelLeft && (
         <label
           className={`text-sm font-medium font-body cursor-pointer ${
@@ -119,7 +113,6 @@ const Switch: React.FC<SwitchProps> = ({
         </label>
       )}
 
-      {/* Сам переключатель */}
       <button
         type="button"
         className={containerClassName}
@@ -134,7 +127,6 @@ const Switch: React.FC<SwitchProps> = ({
         </span>
       </button>
 
-      {/* Правая подпись */}
       {labelRight && (
         <label
           className={`text-sm font-medium font-body cursor-pointer ${

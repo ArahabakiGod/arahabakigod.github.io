@@ -2,25 +2,12 @@ import { useTranslation } from "react-i18next";
 import { Typography } from "../common";
 import { Phone, Mail } from "lucide-react";
 import type { FooterContact } from "./types";
+import { getContactsData } from "../../constants";
 
 const Contacts: React.FC = () => {
   const { t } = useTranslation("portfolio");
 
-  const contacts: FooterContact[] = [
-    {
-      type: "phone",
-      label: t("contact.social.phone"),
-      value: "+375 (44) 531-91-88",
-      href: "tel:+375445319188",
-    },
-    {
-      type: "email",
-      label: t("contact.social.email"),
-      value: "spacie.sharp@gmail.com",
-      href: "mailto:spacie.sharp@gmail.com",
-    },
-  ];
-
+  const contacts = getContactsData(t);
   const getIcon = (type: FooterContact["type"]) => {
     switch (type) {
       case "phone":
