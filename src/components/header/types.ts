@@ -30,3 +30,7 @@ export interface NavItem {
     scrollTarget: string;
     href?: string;
 }
+
+export interface LanguageDropdownProps {
+    className?: string;
+}

@@ -1,5 +1,3 @@
-import React from "react";
-import { useLanguageStore } from "../../stores/languageStore";
 import { useThemeStore } from "../../stores/themeStore";
 import { Switch } from "../common";
 import NavMenu from "./NavMenu";
@@ -7,21 +5,14 @@ import Logo from "./Logo";
 import { SunIcon, MoonIcon } from "./ThemeIcons";
 import type { HeaderProps } from "./types";
 import MobileMenu from "./MobileMenu";
+import LanguageDropdown from "./LanguageDropdown";
 
 const Header: React.FC<HeaderProps> = ({ className = "" }) => {
-  const { currentLanguage, setLanguage } = useLanguageStore();
   const { theme, toggleTheme } = useThemeStore();
-
-  const handleLanguageChange = (isRu: boolean) => {
-    const newLanguage = isRu ? "ru" : "en";
-    setLanguage(newLanguage);
-  };
 
   const handleThemeChange = () => {
     toggleTheme();
   };
-
-  const isRussian = currentLanguage === "ru";
 
   return (
     <header
@@ -52,20 +43,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
       </div>
 
       <div className="flex flex-row items-center space-x-2 flex-shrink-0">
-        <Switch
-          size="md"
-          textInside
-          checked={isRussian}
-          onChange={handleLanguageChange}
-          colorLeft="bg-border"
-          colorRight="bg-primary"
-          labelLeft="RU"
-          labelRight="EN"
-          iconLeft="EN"
-          iconRight="RU"
-          aria-label="Language switcher"
-          className="min-w-[3rem]"
-        />
+        <LanguageDropdown />
 
         <Switch
           size="md"

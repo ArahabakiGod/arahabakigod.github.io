@@ -14,9 +14,7 @@ export type {
     MobileMenuProps,
     NavItemProps,
     ThemeIconProps,
-    LanguageSwitchProps,
-    ThemeSwitchProps,
-    HeaderSwitchProps,
+    LanguageDropdownProps
 } from './types';
 
 export { default } from './Header';
