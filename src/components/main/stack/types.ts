@@ -9,3 +9,7 @@ export interface TechnologiesProps {
 export interface StackProps {
     className?: string;
 }
+
+export interface ActivityFieldSwitchProps {
+    className?: string;
+}

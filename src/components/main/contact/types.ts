@@ -1,4 +1,4 @@
-export interface TextSectionProps {
+export interface ContactMeProps {
     className?: string;
 }
 
