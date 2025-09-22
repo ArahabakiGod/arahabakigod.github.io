@@ -7,7 +7,7 @@ function App() {
   useInitializeLanguage();
 
   return (
-    <div className="h-200">
+    <div className="">
       <Main />
     </div>
   );

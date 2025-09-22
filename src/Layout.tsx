@@ -10,7 +10,6 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="relative min-h-screen">
-      {/* Интерактивный фон */}
       <HexagonBackground
         hexagonSize={25}
         effectRadius={180}
@@ -18,11 +17,11 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         enableRandomAnimation={true}
         randomPointsCount={4}
         randomAnimationSpeed={1.2}
-        // Светлая тема
+        //L
         backgroundColor="transparent"
         baseColor="#e5e7eb"
         activeColor="#3b82f6"
-        // Темная тема
+        //D
         darkTheme={{
           backgroundColor: "transparent",
           baseColor: "#374151",
@@ -30,7 +29,6 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         }}
       />
 
-      {/* Основной контент */}
       <div className="relative z-10">
         <Header />
         <div className="mt-12">{children}</div>

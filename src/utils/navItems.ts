@@ -32,7 +32,7 @@ export const scrollToElement = (elementId: string) => {
     if (element) {
         element.scrollIntoView({
             behavior: 'smooth',
-            block: 'start'
+            block: 'center'
         });
     }
 };

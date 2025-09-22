@@ -6,11 +6,11 @@ import type { HeroProps } from "./types";
 
 const Hero: React.FC<HeroProps> = ({ className = "" }) => {
   return (
-    <div>
-      <HeroImage />
-      <div>
+    <div className={className} id="about-me">
+      <HeroImage className="relative mr-12 border-r-2 border-accent pr-8" />
+      <div className="flex flex-col justify-between">
         <TextSection />
-        <ButtonsSection />
+        <ButtonsSection className="flex justify-between" />
       </div>
     </div>
   );

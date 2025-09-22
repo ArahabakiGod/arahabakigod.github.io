@@ -4,10 +4,10 @@ import SocialLinks from "./SocialLinks";
 import TextSection from "./TextSection";
 import type { ContactMeProps } from "./types";
 
-const ContactMe: React.FC<ContactMeProps> = () => {
+const ContactMe: React.FC<ContactMeProps> = ({ className }) => {
   const { t } = useTranslation("common");
   return (
-    <div>
+    <div className={className} id="contact-me">
       <TextSection />
       <SocialLinks />
       <Button>{t("contactMe")}</Button>

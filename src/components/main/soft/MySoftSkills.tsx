@@ -2,13 +2,13 @@ import SoftSkillsSection from "./SoftSkillsSection"
 import TextSection from "./TextSection"
 import type { MySoftSkillsProps } from "./types"
 
-const MySoftSkills: React.FC<MySoftSkillsProps> = () => {
+const MySoftSkills: React.FC<MySoftSkillsProps> = ({ className }) => {
   return (
-    <div>
-        <TextSection />
-        <SoftSkillsSection />
+    <div className={className} id="soft-skills">
+      <TextSection />
+      <SoftSkillsSection />
     </div>
-  )
-}
+  );
+};
 
 export default MySoftSkills
