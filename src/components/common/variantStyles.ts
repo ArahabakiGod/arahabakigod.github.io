@@ -10,10 +10,34 @@ export const typographyVariantStyles = {
 };
 
 export const buttonVariantStyles = {
-    primary: 'bg-primary text-white border-2 border-primary hover:bg-primary/90 hover:border-primary/90 focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-primary/80',
-    secondary: 'bg-secondary text-white border-2 border-secondary hover:bg-secondary/90 hover:border-secondary/90 focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-secondary/80',
-    outlined: 'bg-transparent text-text-primary border-2 border-border hover:bg-hover hover:border-border-hover focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-active',
-    ghost: 'bg-transparent text-text-primary border-2 border-transparent hover:bg-hover hover:border-border-light focus:outline-none active:bg-active'
+    primary: {
+        base: 'border-2 focus:ring-2 focus:ring-focus-ring focus:outline-none',
+        full: 'bg-primary text-white border-2 border-primary hover:bg-primary/90 hover:border-primary/90 focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-primary/80'
+    },
+    secondary: {
+        base: 'border-2 focus:ring-2 focus:ring-focus-ring focus:outline-none',
+        full: 'bg-secondary text-white border-2 border-secondary hover:bg-secondary/90 hover:border-secondary/90 focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-secondary/80'
+    },
+    outlined: {
+        base: 'bg-transparent border-2 focus:ring-2 focus:ring-focus-ring focus:outline-none',
+        full: 'bg-transparent text-text-primary border-2 border-border hover:bg-hover hover:border-border-hover focus:ring-2 focus:ring-focus-ring focus:outline-none active:bg-active'
+    },
+    ghost: {
+        base: 'bg-transparent border-2 border-transparent focus:outline-none',
+        full: 'bg-transparent text-text-primary border-2 border-transparent hover:bg-hover hover:border-border-light focus:outline-none active:bg-active'
+    }
+};
+
+export const buttonColorStyles = {
+    primary: 'bg-primary text-white border-primary hover:bg-primary/90 hover:border-primary/90 active:bg-primary/80',
+    secondary: 'bg-secondary text-white border-secondary hover:bg-secondary/90 hover:border-secondary/90 active:bg-secondary/80',
+    accent: 'bg-accent text-white border-accent hover:bg-accent/90 hover:border-accent/90 active:bg-accent/80',
+    success: 'bg-success text-white border-success hover:bg-success/90 hover:border-success/90 active:bg-success/80',
+    warning: 'bg-warning text-text-primary border-warning hover:bg-warning/90 hover:border-warning/90 active:bg-warning/80',
+    error: 'bg-error text-white border-error hover:bg-error/90 hover:border-error/90 active:bg-error/80',
+    info: 'bg-info text-white border-info hover:bg-info/90 hover:border-info/90 active:bg-info/80',
+    neutral: 'bg-background-muted text-text-primary border-border hover:bg-hover hover:border-border-hover active:bg-active',
+    custom: ''
 };
 
 export const buttonSizeStyles = {

@@ -1,13 +1,19 @@
 {
     "hero": {
-        "title": "Frontend Developer",
+        "title": "Stepan Ustinov",
         "subtitle": "Building Modern Web Applications",
-        "description": "Passionate about creating beautiful, functional, and user-centered digital experiences with React and TypeScript."
+        "description": "Hi. I am promising developer from Belarus. Development is not only my job, but also my hobby. That's why my projects are not 'cookie-cutter work'. You may find personality, balance and even pice of soul in each of my projects. Currently I am looking for job opportunities in Europe, so I'll be glad to recieve an offer from you. Also I am open to any personal projects to work with.",
+        "contactMe": "Contact me",
+        "viewProjects": "View projects"
     },
     "personal": {
-        "experience": "{{years}}+ years of experience (since {{startYear}})",
-        "location": "Location: {{location}}",
-        "timezone": "Timezone: {{timezone}}",
+        "experience_one": "{{years}} year of experience (since {{startYear}})",
+        "experience_other": "{{years}} years of experience (since {{startYear}})",
+        "locationTitle": "Location:",
+        "location": "{{location}}",
+        "timezoneTitle": "Timezone:",
+        "timezone": "{{timezone}}",
+        "availabilityTitle": "My current availability:",
         "availability": {
             "available": "Available for projects",
             "busy": "Currently busy",

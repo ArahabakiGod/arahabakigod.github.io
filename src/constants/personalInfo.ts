@@ -38,7 +38,11 @@ export const personalInfo: PersonalInfo = {
 
 export const getExperienceText = (t: (key: string, options?: any) => string): string => {
     const { years, startYear } = personalInfo.experience;
-    return t('personal.experience', { years, startYear });
+    return t('personal.experience', {
+        count: years,
+        years,
+        startYear
+    });
 };
 
 export const getAge = (): number => {

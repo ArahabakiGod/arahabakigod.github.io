@@ -1,10 +1,15 @@
 import React from "react";
 import type { ButtonProps } from "./types";
-import { buttonVariantStyles, buttonSizeStyles } from "./variantStyles";
+import {
+  buttonVariantStyles,
+  buttonSizeStyles,
+  buttonColorStyles,
+} from "./variantStyles";
 
 const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "md",
+  color,
   children,
   className = "",
   disabled = false,
@@ -18,13 +23,31 @@ const Button: React.FC<ButtonProps> = ({
     "inline-flex items-center justify-center font-body rounded-lg transition-all duration-200 cursor-pointer select-none";
 
   const disabledStyles = "opacity-60 cursor-not-allowed pointer-events-none";
-
   const loadingStyles = "cursor-wait";
+
+  const getVariantStyles = () => {
+    if (color) {
+      return (
+        buttonVariantStyles[variant]?.base || buttonVariantStyles.primary.base
+      );
+    }
+    return (
+      buttonVariantStyles[variant]?.full || buttonVariantStyles.primary.full
+    );
+  };
+
+  const getColorStyles = () => {
+    if (color) {
+      return buttonColorStyles[color] || "";
+    }
+    return "";
+  };
 
   const combinedClassName = `
     ${baseStyles}
-    ${buttonVariantStyles[variant]}
+    ${getVariantStyles()}
     ${buttonSizeStyles[size]}
+    ${getColorStyles()}
     ${disabled || loading ? disabledStyles : ""}
     ${loading ? loadingStyles : ""}
     ${className}
@@ -39,7 +62,7 @@ const Button: React.FC<ButtonProps> = ({
     }
     onClick?.(event);
   };
-  
+
   const getIconSize = () => {
     switch (size) {
       case "sm":

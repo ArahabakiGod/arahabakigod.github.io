@@ -29,7 +29,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         }}
       />
 
-      <div className="relative z-10">
+      <div className="z-10">
         <Header />
         <div className="mt-12">{children}</div>
         <Footer />

@@ -12,10 +12,21 @@ export interface TypographyProps extends HTMLAttributes<HTMLElement> {
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outlined' | 'ghost';
 export type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonColor =
+    | 'primary'
+    | 'secondary'
+    | 'accent'
+    | 'success'
+    | 'warning'
+    | 'error'
+    | 'info'
+    | 'neutral'
+    | 'custom';
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
     size?: ButtonSize;
+    color?: ButtonColor;
     children: React.ReactNode;
     className?: string;
     disabled?: boolean;
