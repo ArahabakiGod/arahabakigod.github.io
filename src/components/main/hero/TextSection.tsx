@@ -21,19 +21,19 @@ const TextSection: React.FC<TextSectionProps> = ({ className = "" }) => {
         </Typography>
         <Typography color="secondary" className="inline">
           {t("personal.availabilityTitle")}
-          <Typography className="inline" color="primary">
-            {" " + getAvailabilityStatus(t)}
-          </Typography>
+        </Typography>
+        <Typography className="inline" color="primary">
+          {" " + getAvailabilityStatus(t)}
         </Typography>
         <div></div>
         <Typography color="secondary" className="inline">
           {t("personal.locationTitle")}
-          <Typography className="inline" color="primary">
-            {" " + getLocationText(t) + " | "}
-          </Typography>
-          <Typography className="inline" color="secondary">
-            {getTimezoneText(t)}
-          </Typography>
+        </Typography>
+        <Typography className="inline" color="primary">
+          {" " + getLocationText(t) + " | "}
+        </Typography>
+        <Typography className="inline" color="secondary">
+          {getTimezoneText(t)}
         </Typography>
       </div>
     </div>

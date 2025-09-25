@@ -24,10 +24,11 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
   const animationRef = useRef<number | null>(null);
   const hexagonsRef = useRef<Hexagon[]>([]);
   const randomPointsRef = useRef<AnimationPoint[]>([]);
+  const resizeTimeoutRef = useRef<number | null>(null);
   const { theme } = useThemeStore();
 
   // Получаем текущие цвета в зависимости от темы
-  const getCurrentColors = useCallback(() => {
+  const getCurrentColors = () => {
     const isDark = theme === "dark";
     return {
       background: isDark
@@ -36,7 +37,7 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
       base: isDark ? darkTheme.baseColor || baseColor : baseColor,
       active: isDark ? darkTheme.activeColor || activeColor : activeColor,
     };
-  }, [theme, backgroundColor, baseColor, activeColor, darkTheme]);
+  };
 
   // Парсинг цвета в RGB
   const parseColor = useCallback((color: string): [number, number, number] => {
@@ -140,7 +141,7 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * randomAnimationSpeed * 2,
           vy: (Math.random() - 0.5) * randomAnimationSpeed * 2,
-          intensity: 0.2 + Math.random() * 0.5, // Более мягкая интенсивность для фона
+          intensity: 0.2 + Math.random() * 0.5,
         });
       }
       randomPointsRef.current = points;
@@ -276,12 +277,10 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     // Обновляем интенсивности
     updateIntensities();
 
-    // Рисуем только активные шестиугольники (с интенсивностью > 0.02)
-    let activeCount = 0;
+    // Рисуем только активные шестиугольники
     hexagonsRef.current.forEach((hexagon) => {
       if (hexagon.intensity > 0.02) {
         drawHexagon(ctx, hexagon.x, hexagon.y, hexagonSize, hexagon.intensity);
-        activeCount++;
       }
     });
 
@@ -301,39 +300,77 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     };
   }, []);
 
-  // Обработчик изменения размера окна
+  // ОПТИМИЗИРОВАННЫЙ обработчик изменения размера окна
   const handleResize = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Очищаем предыдущий таймаут
+    if (resizeTimeoutRef.current) {
+      clearTimeout(resizeTimeoutRef.current);
+    }
+
+    // Немедленно обновляем размеры canvas
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    initializeHexagons(canvas.width, canvas.height);
-  }, [initializeHexagons]);
+    // Откладываем пересчёт сетки на 150мс чтобы избежать множественных вызовов
+    resizeTimeoutRef.current = setTimeout(() => {
+      // Сохраняем текущие значения интенсивности для плавности
+      const oldHexagons = hexagonsRef.current.map((h) => ({ ...h }));
+
+      // Пересчитываем сетку
+      initializeHexagons(canvas.width, canvas.height);
+
+      // Пытаемся сохранить интенсивности для близких позиций
+      if (oldHexagons.length > 0) {
+        hexagonsRef.current.forEach((newHex) => {
+          const closest = oldHexagons.find(
+            (oldHex) =>
+              Math.abs(oldHex.x - newHex.x) < hexagonSize &&
+              Math.abs(oldHex.y - newHex.y) < hexagonSize
+          );
+          if (closest) {
+            newHex.intensity = closest.intensity;
+            newHex.targetIntensity = closest.targetIntensity;
+          }
+        });
+      }
+    }, 500);
+  }, [initializeHexagons, hexagonSize]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Первичная инициализация
     handleResize();
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", handleResize);
 
-    render();
+    // Запускаем анимацию только один раз
+    if (!animationRef.current) {
+      render();
+    }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
 
+      // Очищаем таймаут при размонтировании
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
+      }
+
       if (animationRef.current !== null) {
         cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
       }
     };
-  }, [handleMouseMove, handleResize, render]);
+  }, [handleMouseMove, handleResize]);
 
-  // Перезапускаем анимацию при изменении темы
+  // Обновляем только цвета при изменении темы, НЕ перезапускаем анимацию
   useEffect(() => {
     if (animationRef.current !== null) {
       cancelAnimationFrame(animationRef.current);

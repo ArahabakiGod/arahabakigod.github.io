@@ -1,22 +1,20 @@
-// src/components/header/LanguageDropdown.tsx
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown, Globe } from "lucide-react";
 import { Button } from "../common";
-import { useLanguageStore } from "../../stores/languageStore";
 import {
   availableLanguages,
   getLanguageByCode,
   getDefaultLanguage,
 } from "../../constants/languages";
 import type { LanguageDropdownProps } from "./types";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
   className = "",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const { currentLanguage, setLanguage } = useLanguageStore();
-
+  const { currentLanguage, changeLanguage } = useTranslation();
   const currentLang =
     getLanguageByCode(currentLanguage) || getDefaultLanguage();
 
@@ -56,7 +54,7 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
   }, [isOpen]);
 
   const handleLanguageSelect = (languageCode: string) => {
-    setLanguage(languageCode);
+    changeLanguage(languageCode);
     setIsOpen(false);
   };
 
@@ -100,14 +98,16 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
           aria-label="Language options"
         >
           {availableLanguages.map((language) => (
-            <button
+            <Button
               key={language.code}
               onClick={() => handleLanguageSelect(language.code)}
+              variant="ghost"
               className={`
                 w-full px-2 py-0.5 text-left
                 flex items-center gap-3
                 hover:bg-hover transition-colors duration-150
                 focus:bg-hover focus:outline-none
+                rounded-none
                 ${
                   currentLanguage === language.code
                     ? "bg-primary/10 text-primary font-medium"
@@ -126,7 +126,7 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
                   {language.nativeName}
                 </span>
               </div>
-            </button>
+            </Button>
           ))}
         </div>
       )}

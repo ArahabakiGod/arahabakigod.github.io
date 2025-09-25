@@ -30,11 +30,11 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
       `}
       role="banner"
     >
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 hidden sm:block">
         <Logo className="transition-transform duration-300 hover:scale-105" />
       </div>
 
-      <div className="flex-grow flex justify-center">
+      <div className="flex-grow flex justify-start sm:justify-center">
         <NavMenu className="hidden lg:flex" />
 
         <div className="lg:hidden">

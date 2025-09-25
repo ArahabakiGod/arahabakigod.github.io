@@ -9,7 +9,7 @@ const Links: React.FC = () => {
   const socialLinks = getSocialLinksWithLabels(t);
 
   const handleSocialClick = (href: string) => {
-    window.open(href, '_blank', 'noopener,noreferrer');
+    window.open(href, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -21,6 +21,7 @@ const Links: React.FC = () => {
       <div className="space-y-2">
         {socialLinks.map((social) => (
           <Button
+            key={social.name}
             icon={social.icon}
             variant="outlined"
             onClick={() => handleSocialClick(social.href)}
