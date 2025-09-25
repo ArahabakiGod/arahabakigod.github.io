@@ -5,6 +5,7 @@
     "cancel": "Cancel",
     "save": "Save",
     "send": "Send",
+    "sending": "Sending...",
     "close": "Close",
     "yes": "Yes",
     "no": "No",
@@ -17,5 +18,15 @@
     "attachFile": "Attach file",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "validation": {
+        "nameMin": "Name must be at least 2 characters",
+        "nameRequired": "Name is required",
+        "emailInvalid": "Invalid email address",
+        "emailRequired": "Email is required",
+        "subjectMin": "Subject must be at least 3 characters",
+        "subjectRequired": "Subject is required",
+        "messageMin": "Message must be at least 10 characters",
+        "messageRequired": "Message is required"
+    }
 }

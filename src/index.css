@@ -138,3 +138,97 @@ body {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(border, 0.2);
 }
+
+
+/* Additional styles for modal animations - Add to index.css */
+
+/* Modal Animation Keyframes */
+@keyframes modal-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-slide-in-from-top {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Animation Classes */
+.animate-in {
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.zoom-in-95 {
+  animation-name: modal-zoom-in;
+}
+
+.fade-in {
+  animation-name: modal-fade-in;
+}
+
+.slide-in-from-top-2 {
+  animation-name: modal-slide-in-from-top;
+}
+
+/* Card hover effects for social links */
+.social-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact button pulse animation */
+@keyframes contact-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.contact-button {
+  animation: contact-pulse 2s infinite;
+}
+
+/* File upload area styles */
+.file-upload-area {
+  transition: all 0.2s ease-in-out;
+}
+
+.file-upload-area:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-background-elevated);
+}
