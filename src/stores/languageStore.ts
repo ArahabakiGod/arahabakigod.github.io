@@ -15,36 +15,46 @@ export const useLanguageStore = create<LanguageState>()(
             currentLanguage: 'en',
 
             setLanguage: (lang: string) => {
+                console.log("setLanguage called with:", lang);
                 i18n.changeLanguage(lang);
                 set({ currentLanguage: lang });
-                localStorage.setItem('i18nextLng', lang);
+                console.log("New lang: " + lang + "/ Stored lang: " + localStorage.getItem('i18nextLng'));
             },
 
             initializeLanguage: () => {
-                const storedLang = localStorage.getItem('i18nextLng');
-                const i18nLang = i18n.language;
-                const targetLang = storedLang || i18nLang || 'en';
+                const i18nLang = i18n.language || 'en';
+                const storedLang = get().currentLanguage;
 
-                if (targetLang !== i18nLang) {
-                    i18n.changeLanguage(targetLang);
+                console.log("storedLang: " + storedLang + "/ i18nLang: " + i18nLang);
+
+                if (storedLang !== i18nLang) {
+                    set({ currentLanguage: i18nLang });
+                    console.log("Synchronized with i18next:", i18nLang);
                 }
-
-                set({ currentLanguage: targetLang });
             },
         }),
         {
-            name: 'i18nextLng',
+            name: 'language-storage',
             onRehydrateStorage: () => (state) => {
-                if (state) {
-                    const storedLang = state.currentLanguage;
-                    const i18nLang = i18n.language;
+                return new Promise<void>((resolve) => {
+                    if (state) {
+                        const storedLang = state.currentLanguage;
+                        const i18nLang = i18n.language || 'en';
 
-                    if (storedLang && storedLang !== i18nLang) {
-                        i18n.changeLanguage(storedLang);
+                        console.log("onRehydrate - storedLang:", storedLang, "i18nLang:", i18nLang);
+
+                        if (storedLang && storedLang !== i18nLang) {
+                            i18n.changeLanguage(storedLang).then(() => {
+                                console.log("Language rehydrated:", storedLang);
+                                resolve();
+                            });
+                        } else {
+                            resolve();
+                        }
+                    } else {
+                        resolve();
                     }
-
-                    state.currentLanguage = storedLang || i18nLang || 'en';
-                }
+                });
             },
         }
     )
@@ -54,15 +64,10 @@ export const useInitializeLanguage = () => {
     const { initializeLanguage } = useLanguageStore();
 
     React.useEffect(() => {
-        const initLang = () => {
+        const timer = setTimeout(() => {
             initializeLanguage();
-        };
+        }, 100);
 
-        if (i18n.isInitialized){
-            initLang();
-        } else {
-            i18n.on('initialized', initLang);
-            return () => i18n.off('initialized', initLang);
-        }
+        return () => clearTimeout(timer);
     }, [initializeLanguage]);
 };

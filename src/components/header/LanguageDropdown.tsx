@@ -15,6 +15,7 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { currentLanguage, changeLanguage } = useTranslation();
+
   const currentLang =
     getLanguageByCode(currentLanguage) || getDefaultLanguage();
 
@@ -53,9 +54,14 @@ const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
     };
   }, [isOpen]);
 
-  const handleLanguageSelect = (languageCode: string) => {
-    changeLanguage(languageCode);
-    setIsOpen(false);
+  const handleLanguageSelect = async (languageCode: string) => {
+    console.log("Language selected:", languageCode);
+    try {
+      await changeLanguage(languageCode);
+      setIsOpen(false);
+    } catch (error) {
+      console.error("Error changing language:", error);
+    }
   };
 
   const toggleDropdown = () => {
