@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../hooks/useTranslation";
 import { Button } from "../../common";
 import SocialLinks from "./SocialLinks";
 import TextSection from "./TextSection";

@@ -3,7 +3,7 @@ import { navItems, scrollToElement } from "../../utils/navItems";
 import NavItem from "./NavItem";
 import type { NavMenuProps } from "./types";
 import { Button } from "../common";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../hooks/useTranslation";
 import { ChevronDown } from "lucide-react";
 
 const NavMenu: React.FC<NavMenuProps> = ({ className = "" }) => {

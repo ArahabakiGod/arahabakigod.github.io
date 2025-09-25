@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "../common";
 import type { LogoProps } from "./types";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const Logo: React.FC<LogoProps> = ({ className = "", onClick }) => {
     const { t } = useTranslation("portfolio");

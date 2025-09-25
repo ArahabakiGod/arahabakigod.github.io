@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Typography } from "../common";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../hooks/useTranslation";
 import { getSocialLinksWithLabels } from "../../constants";
 
 const Links: React.FC = () => {

@@ -3,7 +3,7 @@ import { Typography } from "../common";
 import Links from "./Links";
 import Contacts from "./Contacts";
 import TechStack from "./TechStack";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation("portfolio");

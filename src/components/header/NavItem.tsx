@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../hooks/useTranslation";
 import { scrollToElement } from "../../utils/navItems";
 import { Button } from "../common";
 import type { NavItemProps } from "./types";

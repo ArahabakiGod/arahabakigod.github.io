@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../../common";
 import type { ButtonsSectionProps } from "./types";
 import { scrollToElement } from "../../../utils/navItems";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 const ButtonsSection: React.FC<ButtonsSectionProps> = ({ className = "" }) => {
   const { t } = useTranslation("portfolio");

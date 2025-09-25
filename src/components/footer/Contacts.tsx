@@ -1,8 +1,8 @@
-import { useTranslation } from "react-i18next";
 import { Typography } from "../common";
 import { Phone, Mail } from "lucide-react";
 import type { FooterContact } from "./types";
 import { getContactsData } from "../../constants";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const Contacts: React.FC = () => {
   const { t } = useTranslation("portfolio");

@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "../../common";
 import type { TextSectionProps } from "./types";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../hooks/useTranslation";
 import { getAvailabilityStatus, getExperienceText, getLocationText, getTimezoneText } from "../../../constants";
 
 const TextSection: React.FC<TextSectionProps> = ({ className = "" }) => {

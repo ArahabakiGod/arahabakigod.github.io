@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "../common";
 import { getFooterTechnologies } from "../../constants";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../hooks/useTranslation";
 
 const TechStack: React.FC = () => {
   const { t } = useTranslation("portfolio");
