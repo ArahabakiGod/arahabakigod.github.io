@@ -120,7 +120,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
             variant="ghost"
             size="sm"
             onClick={onClose}
-            className="p-2 hover:bg-hover rounded-lg"
+            className="!p-2 hover:bg-hover rounded-lg"
             aria-label={t("close")}
           >
             <X className="w-5 h-5" />

@@ -62,10 +62,10 @@ export const errorMessageStyles = 'mt-1 text-sm font-body text-error';
 
 export const cardVariantStyles = {
     default: 'bg-background border border-border rounded-lg shadow-sm',
-    elevated: 'bg-background-elevated border border-border rounded-lg shadow-lg',
+    elevated: 'bg-background-elevated border border-border rounded-lg shadow-md',
     outlined: 'bg-background border-2 border-border rounded-lg shadow-none',
-    tech: 'bg-tech-card border border-border rounded-xl shadow-md overflow-hidden',
-    project: 'bg-project-card border border-border rounded-2xl shadow-lg overflow-hidden',
+    tech: 'bg-tech-card border border-border rounded-xl shadow-sm overflow-hidden',
+    project: 'bg-project-card border border-border rounded-2xl shadow-md overflow-hidden',
     social: 'bg-background border border-border rounded-lg shadow-sm hover:shadow-md',
     'skill-cloud': 'bg-skill-cloud border border-border-light rounded-full shadow-sm'
 };

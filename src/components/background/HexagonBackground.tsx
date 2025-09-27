@@ -4,8 +4,8 @@ import type { HexagonBackgroundProps, AnimationPoint, Hexagon } from "./types";
 
 const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
   backgroundColor = "transparent",
-  baseColor = "#374151",
-  activeColor = "#6366f1",
+  baseColor = "#e2e8f0",
+  activeColor = "#2563eb",
   hexagonSize = 25,
   effectRadius = 180,
   fadeSpeed = 0.02,

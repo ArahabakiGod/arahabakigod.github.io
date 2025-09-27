@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
         bg-background-secondary/95 
         backdrop-blur-md
         border-b-2 border-border-light 
-        shadow-xl shadow-accent/40
+        shadow-xl shadow-border/60
         transition-all duration-300
         ${className}
       `}

@@ -37,7 +37,7 @@ const NavItem: React.FC<NavItemProps> = ({
         hover:bg-hover hover:text-primary
         focus:ring-2 focus:ring-focus-ring
         transition-all duration-200
-        whitespace-nowrap
+        whitespace-nowrap text-xl
         ${className}
       `}
       aria-label={`Navigate to ${t(getTranslationKey(title))}`}

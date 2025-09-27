@@ -116,7 +116,7 @@ const SoftSkillsSection: React.FC<SoftSkillsSectionProps> = ({
             variant="elevated"
             size="md"
             className="
-              max-w-xs shadow-2xl shadow-accent/30 border-2 border-accent/50
+              max-w-xs shadow-xl shadow-accent/30 border-2 border-accent/50
               bg-background-elevated backdrop-blur-sm
               animate-in fade-in slide-in-from-bottom-2 duration-200
             "

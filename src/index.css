@@ -18,44 +18,45 @@
   --font-serif: "Montserrat", "Lato", Georgia, serif;
   --font-mono: "JetBrains Mono", Consolas, monospace;
 
-  --color-primary: #30b0ff;
-  --color-secondary: #0021b3;
-  --color-accent: #5cd7d7;
+  --color-primary: #2563eb;
+  --color-secondary: #1e3a8a;
+  --color-accent: #60a5fa;
 
-  --color-text-primary: #000000;
-  --color-text-secondary: #0021b3;
-  --color-text-muted: #4e4e4e;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #1e3a8a;
+  --color-text-muted: #6b7280;
 
   --color-background: #ffffff;
-  --color-background-secondary: #f8f9fa;
-  --color-background-elevated: #444444;
-  --color-background-muted: #e9ecef;
+  --color-background-secondary: #f8fafc;
+  --color-background-elevated: #f1f5f9;
+  --color-background-muted: #e2e8f0;
 
-  --color-border: #4e5b61;
-  --color-border-light: #8d9ba1;
-  --color-border-focus: #30b0ff;
-  --color-border-hover: #003952;
+  --color-border: #cbd5e1;
+  --color-border-light: #e2e8f0;
+  --color-border-focus: #2563eb;
+  --color-border-hover: #94a3b8;
 
-  --color-hover: #f8f9fa;
-  --color-active: #e9ecef;
-  --color-disabled: #6c757d;
-  --color-focus-ring: rgba(92, 215, 215, 0.3);
+  --color-hover: #f8fafc;
+  --color-active: #e2e8f0;
+  --color-disabled: #94a3b8;
+  --color-focus-ring: rgba(37, 99, 235, 0.2);
 
-  --color-success: #28a745;
-  --color-warning: #ffc107;
-  --color-error: #dc3545;
-  --color-info: #17a2b8;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-info: #0284c7;
 
-  --color-skill-cloud: #b0ceff;
-  --color-tech-card: #c9c9c9;
+  --color-skill-cloud: #dbeafe;
+  --color-tech-card: #f1f5f9;
   --color-project-card: #ffffff;
-  --color-nav-active: #5cd7d7;
-  --color-hero-gradient-start: #30b0ff;
-  --color-hero-gradient-end: #0021b3;
+  --color-nav-active: #60a5fa;
 
-  --color-accent-dark: #34afaf;
-  --color-accent-light: #84ffff;
-  --color-highlight: #fff3cd;
+  --color-hero-gradient-start: #2563eb;
+  --color-hero-gradient-end: #1e3a8a;
+
+  --color-accent-dark: #3b82f6;
+  --color-accent-light: #93c5fd;
+  --color-highlight: #fef3c7;
 }
 
 @layer theme {
@@ -63,8 +64,8 @@
   :root,
   :host {
     @variant dark {
-      --color-primary: #232323;
-      --color-secondary: #999999;
+      --color-primary: #4a5568;
+      --color-secondary: #a0aec0;
       --color-accent: #50005d;
 
       --color-text-primary: #ffffff;
@@ -73,18 +74,18 @@
 
       --color-background: #0d1117;
       --color-background-secondary: #161b22;
-      --color-background-elevated: #444444;
+      --color-background-elevated: #2d3748;
       --color-background-muted: #1c2128;
 
-      --color-border: #30363d;
-      --color-border-light: #21262d;
-      --color-border-focus: #50005d;
-      --color-border-hover: #484f58;
+      --color-border: #2d3748;
+      --color-border-light: #1a202c;
+      --color-border-focus: #7c3aed;
+      --color-border-hover: #4a5568;
 
       --color-hover: #161b22;
       --color-active: #21262d;
-      --color-disabled: #484f58;
-      --color-focus-ring: rgba(80, 0, 93, 0.4);
+      --color-disabled: #4a5568;
+      --color-focus-ring: rgba(124, 58, 237, 0.4);
 
       --color-success: #238636;
       --color-warning: #d29922;
@@ -95,8 +96,9 @@
       --color-tech-card: #21262d;
       --color-project-card: #21262d;
       --color-nav-active: #50005d;
-      --color-hero-gradient-start: #50005d;
-      --color-hero-gradient-end: #e9dcff;
+
+      --color-hero-gradient-start: #4a5568;
+      --color-hero-gradient-end: #50005d;
 
       --color-accent-light: #7c3aed;
       --color-accent-dark: #3b0764;
@@ -107,40 +109,31 @@
 
 body {
   @apply font-body bg-background text-text-primary;
-  /* Убираем overflow-hidden чтобы интерактивный фон работал правильно */
   min-height: 100vh;
 }
 
-/* Улучшаем производительность для анимированного фона */
 #root {
   position: relative;
 }
 
-/* Дополнительные стили для контента поверх фона */
 .content-overlay {
   position: relative;
   z-index: 10;
-  /* Легкая прозрачность для фона контента */
   background: rgba(background, 0.95);
   backdrop-filter: blur(1px);
 }
 
-/* Стили для карточек поверх фона */
 .card-overlay {
   background: rgba(background, 0.9);
   backdrop-filter: blur(2px);
   border: 1px solid rgba(border, 0.3);
 }
 
-/* Прозрачная навигация */
 .nav-overlay {
   background: rgba(background, 0.8);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(border, 0.2);
 }
-
-
-/* Additional styles for modal animations - Add to index.css */
 
 /* Modal Animation Keyframes */
 @keyframes modal-zoom-in {
@@ -177,7 +170,7 @@ body {
   }
 }
 
-/* Modal Animation Classes */
+/* Modal Animations */
 .animate-in {
   animation-duration: 0.2s;
   animation-timing-function: ease-out;
@@ -196,17 +189,17 @@ body {
   animation-name: modal-slide-in-from-top;
 }
 
-/* Card hover effects for social links */
+/* Card hovers*/
 .social-card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Contact button pulse animation */
+/* Contact button pulse */
 @keyframes contact-pulse {
 
   0%,
@@ -215,15 +208,14 @@ body {
   }
 
   50% {
-    transform: scale(1.02);
+    transform: scale(1.01);
   }
 }
 
 .contact-button {
-  animation: contact-pulse 2s infinite;
+  animation: contact-pulse 3s infinite;
 }
 
-/* File upload area styles */
 .file-upload-area {
   transition: all 0.2s ease-in-out;
 }

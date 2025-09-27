@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
   const { t } = useTranslation("portfolio");
 
   return (
-    <footer className="bg-background-secondary opacity-90 border-t border-accent py-4 px-4 inset-shadow-sm inset-shadow-accent/80">
+    <footer className="bg-background-muted opacity-90 border-t border-accent py-4 px-4 inset-shadow-sm inset-shadow-accent/80">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row gap-8 md:gap-0 md:justify-between">
           <Links />

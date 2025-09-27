@@ -77,7 +77,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ className = "" }) => {
             bg-background-secondary/95 
             backdrop-blur-md
             border-b-2 border-border-light
-            shadow-xl shadow-accent/40
+            shadow-lg shadow-border/40
             animate-in slide-in-from-top-5 duration-200
           "
           >
