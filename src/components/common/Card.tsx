@@ -11,14 +11,14 @@ const Card: React.FC<CardProps> = ({
   children,
   className = "",
   variant = "default",
-  size = "md",
+  size = "custom",
   interactive = false,
   href,
   clickable = false,
   onClick,
   ...props
 }) => {
-  const baseStyles = `${cardVariantStyles[variant]} ${cardSizeStyles[size]} ${cardResponsiveStyles}`;
+  const baseStyles = `${cardVariantStyles[variant]} ${cardResponsiveStyles} ${cardSizeStyles[size]}`;
 
   const interactiveClasses =
     interactive || clickable || href

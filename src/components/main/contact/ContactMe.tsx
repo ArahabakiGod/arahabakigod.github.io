@@ -6,6 +6,7 @@ import SocialLinks from "./SocialLinks";
 import TextSection from "./TextSection";
 import type { ContactMeProps } from "./types";
 import { useTranslation } from "../../../hooks/useTranslation";
+import { getSectionStyles } from "../sectionStyles";
 
 const ContactMe: React.FC<ContactMeProps> = ({ className = "" }) => {
   const { t } = useTranslation("portfolio");
@@ -21,9 +22,9 @@ const ContactMe: React.FC<ContactMeProps> = ({ className = "" }) => {
 
   return (
     <div className={className + " items-center"} id="contact-me">
-      <TextSection className="mb-4 xl:mb-0 xl:mr-8 xl:w-48 xl:min-w-48 text-center xl:text-left" />
+      <TextSection className={getSectionStyles.left()} />
 
-      <div className="w-[100%] items-center flex flex-col justify-between border-accent pt-8 border-0 border-t-2 xl:p-0 xl:pl-12 xl:border-l-2 xl:border-t-0">
+      <div className={getSectionStyles.right()}>
         <SocialLinks className="mb-8 w-[100%]" />
 
         <Button

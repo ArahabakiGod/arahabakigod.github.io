@@ -16,11 +16,21 @@ export { default as SoftTextSection } from './soft/TextSection';
 
 export { default as MyProjects } from './projects/MyProjects';
 export { default as ProjectsSection } from './projects/ProjectsSection';
+export { default as ProjectCard } from './projects/ProjectCard';
 export { default as ProjectsTextSection } from './projects/TextSection';
 
 export { default as ContactMe } from './contact/ContactMe';
 export { default as SocialLinks } from './contact/SocialLinks';
 export { default as ContactTextSection } from './contact/TextSection';
+
+export {
+    LEFT_SECTION_STYLES,
+    RIGHT_SECTION_STYLES,
+    MAIN_SECTION_STYLES,
+    SECTION_ACTIONS_STYLES,
+    SECTION_COMBINATIONS,
+    getSectionStyles
+} from './sectionStyles';
 
 export type {
     HeroProps,
@@ -45,7 +55,9 @@ export type {
 export type {
     MyProjectsProps,
     ProjectsSectionProps,
-    TextSectionProps as ProjectsTextSectionProps
+    ProjectCardProps,
+    TextSectionProps as ProjectsTextSectionProps,
+    TranslatedProject
 } from './projects/types';
 
 export type {

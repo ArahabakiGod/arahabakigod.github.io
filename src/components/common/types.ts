@@ -46,7 +46,7 @@ export interface InputProps extends HTMLAttributes<HTMLInputElement> {
 }
 
 export type CardVariant = 'default' | 'elevated' | 'outlined' | 'tech' | 'project' | 'social' | 'skill-cloud';
-export type CardSize = 'sm' | 'md' | 'lg' | 'xl' | 'auto';
+export type CardSize = 'sm' | 'md' | 'lg' | 'xl' | 'auto' | 'custom';
 
 export interface CardProps {
     children: React.ReactNode;

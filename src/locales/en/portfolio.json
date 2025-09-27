@@ -133,6 +133,15 @@
         }
     },
     "projects": {
+        "placeholders": {
+            "linksUnavailable": "I am currently working on demo and public repository",
+            "moreFeatures_one": "and {{count}} more feature",
+            "moreFeatures_other": "and {{count}} more features",
+            "moreTechnologies": "+{{count}} more",
+            "currentPreview": "Project:"
+        },
+        "technologiesTitle": "Technologies:",
+        "keyFeaturesTitle": "Key Features:",
         "advertisingAggregator": {
             "title": "Advertising Aggregator Platform",
             "description": "Frontend development for monetization platform targeting content creators. Built responsive admin dashboard with interactive analytics charts, resource verification interface, and financial management system.",

@@ -75,7 +75,8 @@ export const cardSizeStyles = {
     md: 'p-4 max-w-md',
     lg: 'p-6 max-w-lg',
     xl: 'p-8 max-w-xl',
-    auto: 'p-4 w-full'
+    auto: 'p-4 w-full',
+    custom: ''
 };
 
 export const cardInteractiveStyles = {
