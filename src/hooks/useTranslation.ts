@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export const useTranslation = (namespace?: string) => {
     const { t, i18n } = useI18nTranslation(namespace);
-    const { currentLanguage, setLanguage } = useLanguageStore();
+    const { currentLanguage } = useLanguageStore();
 
     useEffect(() => {
         const handleLanguageChanged = (lng: string) => {
