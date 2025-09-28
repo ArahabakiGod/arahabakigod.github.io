@@ -10,7 +10,7 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="relative min-h-screen">
-      <HexagonBackground
+      {/* <HexagonBackground
         hexagonSize={25}
         effectRadius={180}
         fadeSpeed={0.02}
@@ -27,7 +27,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
           baseColor: "#374151",
           activeColor: "#8b5cf6",
         }}
-      />
+      /> */}
 
       <div className="z-10">
         <Header />
