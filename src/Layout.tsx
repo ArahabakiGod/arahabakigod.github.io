@@ -1,6 +1,6 @@
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import { HexagonBackground } from "./components/background";
+//import { HexagonBackground } from "./components/background";
 import type { FC, ReactNode } from "react";
 
 interface LayoutProps {
