@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig(({ mode }) => ({
   plugins: [react(), tailwindcss()],
 
-  base: mode === 'production' ? '/portfolio/' : '/',
+  base: '/',
 
   build: {
     target: 'esnext',
