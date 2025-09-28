@@ -1,13 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/arahabaki.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arahabaki Portfolio</title>
+
+  <meta name="robots" content="index, follow" />
+  <meta name="description"
+    content="Frontend Developer portfolio showcasing React, TypeScript, and modern web development projects" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script>
+    if (!('noModule' in HTMLScriptElement.prototype)) {
+      console.warn('Browser does not support ES modules');
+    }
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+
+  <noscript>
+    <div style="text-align: center; padding: 2rem; font-family: Arial, sans-serif;">
+      <h2>JavaScript Required</h2>
+      <p>This application requires JavaScript to run properly.</p>
+      <p>Please enable JavaScript in your browser settings.</p>
+    </div>
+  </noscript>
+</body>
+
 </html>

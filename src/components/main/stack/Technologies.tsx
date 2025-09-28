@@ -37,13 +37,13 @@ const Technologies: React.FC<TechnologiesComponentProps> = ({
   const getLevelColor = (level: string) => {
     switch (level) {
       case "expert":
-        return "bg-success/20 text-success border-success/30";
+        return "bg-success/40 text-success border-success/30";
       case "advanced":
-        return "bg-primary/20 text-primary border-primary/30";
+        return "bg-accent/40 text-secondary border-primary/30";
       case "intermediate":
-        return "bg-warning/20 text-warning border-warning/30";
+        return "bg-warning/40 text-warning border-warning/30";
       case "beginner":
-        return "bg-info/20 text-info border-info/30";
+        return "bg-info/40 text-info border-info/30";
       default:
         return "bg-background-muted text-text-muted border-border";
     }
@@ -67,14 +67,14 @@ const Technologies: React.FC<TechnologiesComponentProps> = ({
 
   return (
     <div className={className}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="flex flex-wrap gap-4 justify-center 2xl:justify-start">
         {technologies.map((tech) => (
           <Card
             key={tech.id}
             variant="tech"
             size="custom"
             interactive
-            className="p-4 group hover:scale-105 transition-all duration-300 cursor-pointer"
+            className="p-4 !w-[250px] group hover:scale-105 transition-all duration-300 cursor-pointer"
           >
             <div className="text-center">
               {/* Technology Name */}

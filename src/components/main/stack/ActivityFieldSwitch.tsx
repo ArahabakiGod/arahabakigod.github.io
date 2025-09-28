@@ -14,31 +14,29 @@ const ActivityFieldSwitch: React.FC<ActivityFieldSwitchComponentProps> = ({
   onFieldChange,
 }) => {
   const { t } = useTranslation("portfolio");
-  //{selectedField === "frontend" ? "primary" : "outlined"}
-  //
   return (
     <div className={`w-[100%] ${className}`}>
       <Button
         variant="primary"
         color="custom"
         onClick={() => onFieldChange("frontend")}
-        className={`w-[50%] transition-all duration-200 rounded-r-none border-r-0 border-border hover:border-border-hover active:bg-black ${
+        className={`w-[50%] transition-all duration-200 rounded-r-none border-r-0 border-border hover:border-border-hover ${
           selectedField === "frontend"
             ? "bg-accent-dark"
-            : "bg-accent-light hover:bg-accent"
+            : "hover:bg-accent/40  active:bg-active"
         }`}
       >
         {t("stack.frontend")}
       </Button>
 
       <Button
-        variant="primary"
+        variant={selectedField === "backend" ? "primary" : "outlined"}
         color="custom"
         onClick={() => onFieldChange("backend")}
-        className={`w-[50%] transition-all duration-200 rounded-l-none border-l-0 border-border hover:border-border-hover active:bg-active ${
+        className={`w-[50%] transition-all duration-200 rounded-l-none border-l-0 border-border hover:border-border-hover ${
           selectedField === "backend"
             ? "bg-accent-dark"
-            : "bg-accent-light hover:bg-accent"
+            : "hover:bg-accent/40  active:bg-accent/60"
         }`}
       >
         {t("stack.backend")}

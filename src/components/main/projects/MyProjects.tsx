@@ -27,7 +27,7 @@ const MyProjects: React.FC<MyProjectsProps> = ({ className = "" }) => {
       <div className={getSectionStyles.right() + " 2xl:!pl-6"}>
         <ProjectsSection className="mb-8 w-[100%]" />
 
-        <div className={getSectionStyles.actions("multipleButtons") + " pl-6"}>
+        <div className={getSectionStyles.actions("multipleButtons") + " pl-6 hidden"}>
           <Button
             variant="outlined"
             onClick={handleViewAllProjects}
