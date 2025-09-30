@@ -63,7 +63,7 @@ const SoftSkillsSection: React.FC<SoftSkillsSectionProps> = ({
   return (
     <div className={className}>
       {/* Skills Cloud */}
-      <div className="flex flex-wrap gap-3 justify-center 2xl:justify-start mb-6">
+      <div className="flex flex-wrap gap-2 sm:gap-3 justify-center 2xl:justify-start mb-6">
         {translatedSkills.map((skill) => (
           <Card
             key={skill.id}
@@ -73,27 +73,32 @@ const SoftSkillsSection: React.FC<SoftSkillsSectionProps> = ({
               group cursor-pointer transition-all duration-300 ease-in-out
               relative border-2 ${getLevelColor(skill.level)}
               hover:scale-110 hover:shadow-lg hover:shadow-accent/20
-              px-4 py-2 rounded-full
+              px-3 sm:px-4 py-2 rounded-full
               bg-skill-cloud hover:bg-background-elevated
+              min-w-fit
             `}
-            onMouseEnter={(e: React.MouseEvent) => handleMouseEnter(skill.id, e)}
+            onMouseEnter={(e: React.MouseEvent) =>
+              handleMouseEnter(skill.id, e)
+            }
             onMouseLeave={handleMouseLeave}
           >
-            <div className="flex items-center gap-2">
+            {/* Адаптивная структура: вертикальная на маленьких экранах, горизонтальная на больших */}
+            <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
               <Typography
                 variant="caption"
                 color="primary"
-                className="font-medium text-sm whitespace-nowrap group-hover:text-accent transition-colors duration-200"
+                className="font-medium text-xs sm:text-sm whitespace-nowrap group-hover:text-accent transition-colors duration-200 text-center sm:text-left"
               >
                 {skill.name}
               </Typography>
 
               <span
                 className={`
-                px-2 py-0.5 rounded-full text-xs font-medium transition-all duration-200
-                ${getLevelBadgeColor(skill.level)}
-                group-hover:scale-105
-              `}
+                  px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium transition-all duration-200
+                  ${getLevelBadgeColor(skill.level)}
+                  group-hover:scale-105
+                  whitespace-nowrap
+                `}
               >
                 {skill.level}
               </span>
@@ -102,10 +107,9 @@ const SoftSkillsSection: React.FC<SoftSkillsSectionProps> = ({
         ))}
       </div>
 
-      {/* Tooltip */}
       {hoveredSkill && currentHoveredSkill && (
         <div
-          className="fixed z-50 pointer-events-none"
+          className="fixed z-50 pointer-events-none hidden lg:block"
           style={{
             left: `${tooltipPosition.x}px`,
             top: `${tooltipPosition.y}px`,
@@ -162,8 +166,8 @@ const SoftSkillsSection: React.FC<SoftSkillsSectionProps> = ({
         </div>
       )}
 
-      {/* Summary Stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+      {/* Summary Stats - адаптивная сетка */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8">
         {["expert", "advanced", "proficient", "developing"].map((level) => {
           const count = translatedSkills.filter(
             (skill) => skill.level === level
@@ -173,15 +177,19 @@ const SoftSkillsSection: React.FC<SoftSkillsSectionProps> = ({
           return (
             <div
               key={level}
-              className="text-center p-3 rounded-lg bg-background-secondary border border-border hover:border-border-hover transition-colors duration-200"
+              className="text-center p-2 sm:p-3 rounded-lg bg-background-secondary border border-border hover:border-border-hover transition-colors duration-200"
             >
-              <Typography variant="h4" color="primary" className="mb-1">
+              <Typography
+                variant="h4"
+                color="primary"
+                className="mb-1 !text-xl sm:!text-2xl"
+              >
                 {count}
               </Typography>
               <Typography
                 variant="caption"
                 color="secondary"
-                className="capitalize"
+                className="capitalize text-xs sm:text-sm"
               >
                 {level}
               </Typography>

@@ -1,4 +1,5 @@
 import { useThemeStore } from "../../stores/themeStore";
+import { useCompactLayout } from "../../hooks/useBrowserDetection";
 import { Switch } from "../common";
 import NavMenu from "./NavMenu";
 import Logo from "./Logo";
@@ -9,6 +10,7 @@ import LanguageDropdown from "./LanguageDropdown";
 
 const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   const { theme, toggleTheme } = useThemeStore();
+  const needsCompactLayout = useCompactLayout();
 
   const handleThemeChange = () => {
     toggleTheme();
@@ -20,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
         fixed left-0 top-0 z-20 
         w-full h-12 
         flex flex-row items-center justify-between 
-        px-4 sm:px-6 lg:px-8
+        ${needsCompactLayout ? "px-2 sm:px-3 lg:px-4" : "px-4 sm:px-6 lg:px-8"}
         bg-background-secondary/95 
         backdrop-blur-md
         border-b-2 border-border-light 
@@ -30,11 +32,17 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
       `}
       role="banner"
     >
-      <div className="flex-shrink-0 hidden sm:block">
-        <Logo className="transition-transform duration-300 hover:scale-105" />
+      {/* Logo */}
+      <div
+        className={`flex-shrink-0 ${
+          needsCompactLayout ? "hidden lg:block" : "hidden sm:block"
+        }`}
+      >
+        <Logo className="transition-transform duration-300" />
       </div>
 
-      <div className="flex-grow flex justify-start sm:justify-center">
+      {/* Navigation */}
+      <div className="flex-grow flex justify-start sm:justify-center overflow-hidden">
         <NavMenu className="hidden lg:flex" />
 
         <div className="lg:hidden">
@@ -42,11 +50,16 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
         </div>
       </div>
 
-      <div className="flex flex-row items-center space-x-2 flex-shrink-0">
+      {/* Controls */}
+      <div
+        className={`flex flex-row items-center flex-shrink-0 ${
+          needsCompactLayout ? "space-x-1" : "space-x-2"
+        }`}
+      >
         <LanguageDropdown />
 
         <Switch
-          size="md"
+          size={needsCompactLayout ? "sm" : "md"}
           checked={theme === "dark"}
           onChange={handleThemeChange}
           colorLeft="bg-warning"

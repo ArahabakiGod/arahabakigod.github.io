@@ -23,7 +23,7 @@ const ActivityFieldSwitch: React.FC<ActivityFieldSwitchComponentProps> = ({
         className={`w-[50%] transition-all duration-200 rounded-r-none border-r-0 border-border hover:border-border-hover ${
           selectedField === "frontend"
             ? "bg-accent-dark"
-            : "hover:bg-accent/40  active:bg-active"
+            : "hover:bg-accent/40  active:bg-accent/60"
         }`}
       >
         {t("stack.frontend")}

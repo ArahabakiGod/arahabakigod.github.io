@@ -1,10 +1,11 @@
-import React from "react";
-import { Typography } from "../common";
+import React, { useState } from "react";
+import { Typography, AnimatedLogo } from "../common";
 import type { LogoProps } from "./types";
 import { useTranslation } from "../../hooks/useTranslation";
 
 const Logo: React.FC<LogoProps> = ({ className = "", onClick }) => {
-    const { t } = useTranslation("portfolio");
+  const [isHovered, setIsHovered] = useState(false);
+  const { t } = useTranslation("portfolio");
 
   const handleClick = () => {
     if (onClick) {
@@ -18,6 +19,8 @@ const Logo: React.FC<LogoProps> = ({ className = "", onClick }) => {
     <div
       className={`cursor-pointer select-none group ${className}`}
       onClick={handleClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -30,23 +33,15 @@ const Logo: React.FC<LogoProps> = ({ className = "", onClick }) => {
       <div className="flex items-center space-x-2">
         <div
           className="
-          w-10 h-10 
-          bg-gradient-to-br from-primary to-accent 
-          border-1 border-border
-          rounded-lg 
-          flex items-center justify-center
-          shadow-md
-          group-hover:shadow-lg
-          group-hover:scale-105
-          transition-all duration-300
-        "
+            w-10 h-10 
+            flex items-center justify-center
+            rounded-lg 
+            shadow-md
+            group-hover:shadow-lg
+            transition-shadow duration-300
+          "
         >
-          <Typography
-            variant="h4"
-            className="text-white font-bold text-lg leading-none"
-          >
-            {t("header.logoShort")}
-          </Typography>
+          <AnimatedLogo isHovered={isHovered} className="w-full h-full" />
         </div>
 
         <div className="hidden sm:block">

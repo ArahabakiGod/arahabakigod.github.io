@@ -224,3 +224,49 @@ body {
   border-color: var(--color-primary);
   background-color: var(--color-background-elevated);
 }
+
+/* Opera GX and others sidebar browsers */
+
+@supports (-webkit-appearance: none) and (not (-moz-appearance: none)) {
+  header {
+    padding-left: max(0.5rem, env(safe-area-inset-left, 0.5rem));
+    padding-right: max(0.5rem, env(safe-area-inset-right, 0.5rem));
+  }
+}
+
+@media (max-width: 1279px) {
+  header {
+    gap: 0.25rem;
+  }
+
+  header>* {
+    flex-shrink: 1;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  header {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  header .flex.items-center.space-x-2 {
+    gap: 0.25rem;
+  }
+}
+
+header {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+header>div:last-child {
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+header>div:nth-child(2) {
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+}

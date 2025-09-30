@@ -6,19 +6,19 @@ export const socialLinksData: SocialLink[] = [
     name: "Telegram",
     icon: <SiTelegram className="w-4 h-4" />,
     href: "https://t.me/spac1e",
-    color: "text-text-primary hover:text-[#0088cc]",
+    color: "",
   },
   {
     name: "GitHub",
     icon: <SiGithub className="w-4 h-4" />,
     href: "https://github.com/arahabakigod",
-    color: "hover:text-text-primary",
+    color: "",
   },
   {
     name: "LinkedIn",
     icon: <SiLinkedin className="w-4 h-4" />,
     href: "https://linkedin.com/in/arahabaki",
-    color: "hover:text-[#0a66c2]",
+    color: "",
   },
 ];
 

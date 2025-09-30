@@ -27,7 +27,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
   const resizeTimeoutRef = useRef<number | null>(null);
   const { theme } = useThemeStore();
 
-  // Получаем текущие цвета в зависимости от темы
   const getCurrentColors = () => {
     const isDark = theme === "dark";
     return {
@@ -39,9 +38,7 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     };
   };
 
-  // Парсинг цвета в RGB
   const parseColor = useCallback((color: string): [number, number, number] => {
-    // Если цвет в формате #rrggbb
     if (color.startsWith("#")) {
       const hex = color.slice(1);
       const r = parseInt(hex.slice(0, 2), 16);
@@ -50,7 +47,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
       return [r, g, b];
     }
 
-    // Если цвет в формате rgb(r, g, b)
     const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
     if (rgbMatch) {
       return [
@@ -60,11 +56,9 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
       ];
     }
 
-    // Fallback для серого цвета
     return [107, 114, 128];
   }, []);
 
-  // Функция для создания точек шестиугольника
   const getHexagonPoints = useCallback(
     (centerX: number, centerY: number, size: number) => {
       const points: Array<[number, number]> = [];
@@ -79,7 +73,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     []
   );
 
-  // Функция для рисования шестиугольника
   const drawHexagon = useCallback(
     (
       ctx: CanvasRenderingContext2D,
@@ -100,7 +93,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
 
       ctx.closePath();
 
-      // Интерполяция цвета между базовым и активным
       const baseColorRGB = parseColor(colors.base);
       const activeColorRGB = parseColor(colors.active);
 
@@ -117,7 +109,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
       ctx.strokeStyle = `rgb(${r}, ${g}, ${b})`;
       ctx.lineWidth = intensity > 0.1 ? 1.8 : 1;
 
-      // Добавляем тонкое свечение для эффектности
       if (intensity > 0.15) {
         ctx.shadowColor = `rgba(${r}, ${g}, ${b}, ${intensity * 0.3})`;
         ctx.shadowBlur = 8 * intensity;
@@ -129,7 +120,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     [getHexagonPoints, getCurrentColors, parseColor]
   );
 
-  // Инициализация рандомных точек анимации
   const initializeRandomPoints = useCallback(
     (width: number, height: number) => {
       if (!enableRandomAnimation) return;
@@ -149,17 +139,14 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     [enableRandomAnimation, randomPointsCount, randomAnimationSpeed]
   );
 
-  // Обновление позиций рандомных точек
   const updateRandomPoints = useCallback(
     (width: number, height: number) => {
       if (!enableRandomAnimation) return;
 
       randomPointsRef.current.forEach((point) => {
-        // Обновляем позицию
         point.x += point.vx;
         point.y += point.vy;
 
-        // Отражение от границ
         if (point.x <= 0 || point.x >= width) {
           point.vx *= -1;
           point.x = Math.max(0, Math.min(width, point.x));
@@ -173,7 +160,7 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     [enableRandomAnimation]
   );
 
-  // Инициализация honeycomb-сетки
+
   const initializeHexagons = useCallback(
     (width: number, height: number) => {
       const hexagons: Hexagon[] = [];
@@ -207,19 +194,16 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     [hexagonSize, initializeRandomPoints]
   );
 
-  // Обновление интенсивности
   const updateIntensities = useCallback(() => {
     const mouse = mouseRef.current;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Обновляем рандомные точки
     updateRandomPoints(canvas.width, canvas.height);
 
     hexagonsRef.current.forEach((hexagon) => {
       let maxIntensity = 0;
 
-      // Влияние курсора мыши
       const mouseDistance = Math.sqrt(
         Math.pow(mouse.x - hexagon.x, 2) + Math.pow(mouse.y - hexagon.y, 2)
       );
@@ -228,7 +212,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
         maxIntensity = Math.max(maxIntensity, 1 - mouseDistance / effectRadius);
       }
 
-      // Влияние рандомных точек
       if (enableRandomAnimation) {
         randomPointsRef.current.forEach((point) => {
           const distance = Math.sqrt(
@@ -245,7 +228,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
 
       hexagon.targetIntensity = maxIntensity;
 
-      // Плавное изменение интенсивности
       const diff = hexagon.targetIntensity - hexagon.intensity;
       hexagon.intensity += diff * fadeSpeed;
 
@@ -255,7 +237,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     });
   }, [effectRadius, fadeSpeed, enableRandomAnimation, updateRandomPoints]);
 
-  // Основная функция рендера
   const render = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -265,30 +246,25 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
 
     const colors = getCurrentColors();
 
-    // Полная очистка канваса
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Устанавливаем фон если не прозрачный
     if (colors.background && colors.background !== "transparent") {
       ctx.fillStyle = colors.background;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-    // Обновляем интенсивности
     updateIntensities();
 
-    // Рисуем только активные шестиугольники
     hexagonsRef.current.forEach((hexagon) => {
       if (hexagon.intensity > 0.02) {
         drawHexagon(ctx, hexagon.x, hexagon.y, hexagonSize, hexagon.intensity);
       }
     });
 
-    // Продолжаем анимацию
     animationRef.current = requestAnimationFrame(render);
   }, [updateIntensities, drawHexagon, hexagonSize, getCurrentColors]);
 
-  // Обработчик движения мыши
+  // Mouse Movement
   const handleMouseMove = useCallback((event: MouseEvent) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -300,29 +276,22 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     };
   }, []);
 
-  // ОПТИМИЗИРОВАННЫЙ обработчик изменения размера окна
+  // Resize
   const handleResize = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Очищаем предыдущий таймаут
     if (resizeTimeoutRef.current) {
       clearTimeout(resizeTimeoutRef.current);
     }
-
-    // Немедленно обновляем размеры canvas
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Откладываем пересчёт сетки на 150мс чтобы избежать множественных вызовов
     resizeTimeoutRef.current = setTimeout(() => {
-      // Сохраняем текущие значения интенсивности для плавности
       const oldHexagons = hexagonsRef.current.map((h) => ({ ...h }));
 
-      // Пересчитываем сетку
       initializeHexagons(canvas.width, canvas.height);
 
-      // Пытаемся сохранить интенсивности для близких позиций
       if (oldHexagons.length > 0) {
         hexagonsRef.current.forEach((newHex) => {
           const closest = oldHexagons.find(
@@ -343,13 +312,11 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Первичная инициализация
     handleResize();
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", handleResize);
 
-    // Запускаем анимацию только один раз
     if (!animationRef.current) {
       render();
     }
@@ -358,7 +325,6 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
 
-      // Очищаем таймаут при размонтировании
       if (resizeTimeoutRef.current) {
         clearTimeout(resizeTimeoutRef.current);
       }
@@ -370,7 +336,7 @@ const HexagonBackground: React.FC<HexagonBackgroundProps> = ({
     };
   }, [handleMouseMove, handleResize]);
 
-  // Обновляем только цвета при изменении темы, НЕ перезапускаем анимацию
+  // Theme change
   useEffect(() => {
     if (animationRef.current !== null) {
       cancelAnimationFrame(animationRef.current);
